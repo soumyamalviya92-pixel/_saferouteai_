@@ -1,0 +1,229 @@
+//Shared Routes
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Shared Routes Management - Guardian Interface</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-fixed-dim": "#6DDD81", "secondary-container": "#86F898", "on-secondary": "#FFFFFF", "on-primary-fixed-variant": "#004493", "on-primary-container": "#FFFFFF", "on-secondary-container": "#00722F", "on-primary-fixed": "#001A41", "error-container": "#FFDAD6", "surface-container-high": "#E7E8E9", "tertiary-fixed-dim": "#FFB4A9", "on-secondary-fixed": "#002108", "on-tertiary-fixed-variant": "#930004", "on-tertiary-container": "#FFFFFF", "inverse-surface": "#2E3132", primary: "#005BBF", "on-surface": "#191C1D", "surface-variant": "#E1E3E4", "on-surface-variant": "#414754", background: "#F8F9FA", "surface-container-lowest": "#FFFFFF", "surface-bright": "#F8F9FA", "tertiary-fixed": "#FFDAD5", surface: "#F8F9FA", "secondary-fixed": "#89FA9B", "inverse-primary": "#ADC7FF", "on-primary": "#FFFFFF", "on-tertiary-fixed": "#410001", "surface-container-low": "#F3F4F5", "on-error": "#FFFFFF", secondary: "#006E2C", "on-background": "#191C1D", error: "#BA1A1A", tertiary: "#B81D17", "primary-container": "#1A73E8", "surface-tint": "#005BC0", "outline-variant": "#C1C6D6", outline: "#727785", "on-error-container": "#93000A", "inverse-on-surface": "#F0F1F2", "tertiary-container": "#DC392C", "primary-fixed": "#D8E2FF", "surface-dim": "#D9DADB", "on-secondary-fixed-variant": "#005320", "surface-container-highest": "#E1E3E4", "on-tertiary": "#FFFFFF", "surface-container": "#EDEEEF", "primary-fixed-dim": "#ADC7FF"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, fontFamily: {headline: ["Manrope"], body: ["Inter"], label: ["Inter"], display: "Manrope"}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-slate-900 dark:text-slate-50 font-manrope tracking-tight">Guardian Interface</span>
+<div class="hidden md:flex items-center gap-1 bg-slate-100 dark:bg-slate-800 rounded-full px-4 py-1.5">
+<span class="material-symbols-outlined text-slate-500 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64 text-slate-700" placeholder="Search routes..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-6 mr-4 border-r border-slate-200 dark:border-slate-700 pr-6">
+<button class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 font-manrope font-bold tracking-tight px-1">Shared Routes</button>
+<button class="text-slate-500 dark:text-slate-400 font-manrope font-bold tracking-tight hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors px-1">Safety Map</button>
+<button class="text-slate-500 dark:text-slate-400 font-manrope font-bold tracking-tight hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors px-1">Reports</button>
+</div>
+<button class="material-symbols-outlined text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 p-2 rounded-full transition-colors">notifications</button>
+<button class="material-symbols-outlined text-slate-600 dark:text-slate-400 hover:bg-slate-200/50 p-2 rounded-full transition-colors">settings</button>
+<img alt="User profile" class="w-8 h-8 rounded-full border border-slate-200" data-alt="Professional headshot of a friendly man with a slight smile, clean studio lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0RivHNAOtNTw6_zLYgykjh7Goj23JNimeFTNTaKX2f7Nns4wZQEoGkjmPQo-lyas_nam5N97w-i-0EZJWRV5lfFwEWeHIcD5S8oGVzNupCwMv6VEm_3ah5zJofF6gABsMsCmgO3flj_-8TsMygW4vVUNn3IjzEVyBHWVJuoHNpmelrsEzoQ0Ykp3ncclyXzAOzBKAotlzauM42sBak6597efjqsCoTt5vuvlT4P6kotttdnv7-fH-9T9rGt1Z_bY7VlmGrj-cgyM"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-slate-50 dark:bg-slate-900 flex flex-col h-full py-6 border-r border-slate-200 dark:border-slate-800 mt-16">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<div>
+<p class="text-lg font-extrabold text-blue-700 dark:text-blue-400 font-manrope leading-tight">Guardian Core</p>
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-widest">Vigilant Sanctuary</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a  href="dash.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a  href="heatmap.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+<span>Map Explorer</span>
+</a>
+<a  href="routehistory.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span>Route History</span>
+</a>
+<a  href="sharedroutes.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Shared Routes Management</span>
+</a>
+<a  href="compareroutes.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>Route Comparision</span>
+</a>
+
+</nav>
+
+<div class="mt-auto border-t border-slate-100 dark:border-slate-800 pt-4 px-2 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 font-manrope font-semibold text-sm hover:bg-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined">help</span> Help
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-error font-manrope font-semibold text-sm hover:bg-error-container/20 transition-all" href="#">
+<span class="material-symbols-outlined">logout</span> Logout
+            </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 pt-24 px-10 pb-12 min-h-screen">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-10">
+<div>
+<h1 class="text-4xl font-extrabold text-on-surface font-headline tracking-tight mb-2">Shared Routes Management</h1>
+<p class="text-on-surface-variant font-body">Manage the digital guardians watching over your journey and view shared paths.</p>
+</div>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-xl font-semibold flex items-center gap-2 shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">
+<span class="material-symbols-outlined">add_location_alt</span>
+                Share New Route
+            </button>
+</div>
+<!-- Tabbed Interface Container -->
+<div class="bg-surface-container-low rounded-3xl p-2 mb-8 inline-flex gap-1">
+<button class="px-8 py-3 rounded-2xl font-semibold text-sm bg-surface-container-lowest text-primary shadow-sm transition-all">
+                My Shared Routes
+            </button>
+<button class="px-8 py-3 rounded-2xl font-semibold text-sm text-on-surface-variant hover:bg-surface-container-high transition-all">
+                Friends' Routes
+            </button>
+</div>
+<!-- Grid Layout for My Shared Routes -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+<!-- Shared Route Card 1 -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-6 flex flex-col gap-6 shadow-sm border-0">
+<div class="flex justify-between items-start">
+<div class="flex gap-4 items-center">
+<div class="w-14 h-14 rounded-2xl bg-secondary-container/30 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-3xl">route</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Evening Campus Walk</h3>
+<p class="text-sm text-on-surface-variant">Shared with <span class="font-semibold text-on-surface">Sarah Mitchell</span></p>
+</div>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+                        Active
+                    </div>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-4 flex gap-4 overflow-hidden relative group">
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-low to-transparent z-10"></div>
+<img class="w-full h-32 object-cover rounded-xl filter grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Digital map visualization showing a neon blue line representing a walking path through a city park at dusk" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCspT3me9y1f1vlOeZhoj9mjgaIwwTFbbG0DUN9t09botv4_3aYCIHyfX-qjnm_qcIvAoPnR00a4AyPKZo2UAaSbvhN_1N6_2-H8SuKQjdGhzz2x17T7eoeJh7FMUKpXcPrFDJ8Nc18j3Ny8aobvg2i4OfD8iG7GG9t8oLHIB2-eoKLy0uwS_QKy0f_vvLkH5kMeLd7Ih4DROzddSrDDandip70Pc66txWA6QRSV-3yPBcyInEazaY7kw-kAEita7hcr-yIGRN-en0"/>
+<div class="absolute bottom-4 left-4 z-20">
+<span class="bg-white/90 backdrop-blur text-primary text-[10px] px-3 py-1 rounded-full font-bold shadow-sm">VIEW LIVE MAP</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex -space-x-3">
+<img alt="Friend avatar" class="w-8 h-8 rounded-full border-2 border-white" data-alt="Close-up portrait of a young woman with a friendly smile, outdoor natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVVhackhyao1ALqUwSTAFMHqVPUlsW-pBwbCA-o3Q2EjIhBozbHZeqtvbdx2rTgcGWSakL5aN6gKzlROXNKQZ6nn6bgK5LsquhOLXxraPGYUq9G2jrFfdbGXkfCHvejAEOhMeYrGVJZHVOmWpyeKZpxC4SAs9wHHeQhxUz_gF_VxHEf8Xtlb8vBGEWtwZQnR5XrrryksgHYcswqFj8YdTHRME18mdAAmbmPRFsQi50SdqY1dmv6gLYvdp-V8uJzV1wRlmJkuYYsss"/>
+<div class="w-8 h-8 rounded-full bg-primary-container text-white text-[10px] flex items-center justify-center font-bold border-2 border-white">+2</div>
+</div>
+<div class="flex gap-3">
+<button class="text-primary font-bold text-sm px-4 py-2 rounded-xl hover:bg-primary/5 transition-colors">Edit</button>
+<button class="bg-error-container text-on-error-container font-bold text-sm px-6 py-2 rounded-xl hover:bg-error-container/80 transition-colors">Revoke</button>
+</div>
+</div>
+</div>
+<!-- Shared Route Card 2 -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-6 flex flex-col gap-6 shadow-sm border-0">
+<div class="flex justify-between items-start">
+<div class="flex gap-4 items-center">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-3xl">home_work</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-on-surface">Late Office Return</h3>
+<p class="text-sm text-on-surface-variant">Shared with <span class="font-semibold text-on-surface">David Chen</span></p>
+</div>
+</div>
+<div class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                        Expired
+                    </div>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-4 flex gap-4 overflow-hidden relative opacity-60">
+<img class="w-full h-32 object-cover rounded-xl grayscale" data-alt="Modern urban street at night with glowing streetlights and deep shadows, cinematic atmosphere" data-location="New York City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWpy4WZKDndB_zJQOQnbisiPQ3GXDOh4hqjTlP-HHcohpdV_HopMgRAPiUCSD2fC7M6HsxhNXcJowkuWaosuZXeA7bXglXp_5-1wWrXstGOLPOZNELNvqSShxmgA2oh4wLlW5DWQrWZK1C9GC58URvjLLQ30qXBIeyacjHgrhp-_AQLYt24taaTIdvWlN6yuNm-grAXvyUrqbJL1amoCd3_1Emveq7cT5CXp_KsFHaaGCrj_spc1uhs318W8eM1Gy68_uosdVIgy0"/>
+</div>
+<div class="flex items-center justify-between pt-2">
+<span class="text-xs text-on-surface-variant font-medium">Last active: Yesterday, 11:45 PM</span>
+<div class="flex gap-3">
+<button class="text-primary font-bold text-sm px-4 py-2 rounded-xl hover:bg-primary/5 transition-colors">Reshare</button>
+<button class="text-on-surface-variant font-bold text-sm px-4 py-2 rounded-xl hover:bg-surface-container-high transition-colors">Archive</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section for Incoming Requests -->
+<div class="mt-12">
+<div class="flex items-center gap-3 mb-6">
+<h2 class="text-2xl font-extrabold text-on-surface font-headline">Incoming Shared Routes</h2>
+<span class="bg-tertiary-container text-white px-2 py-0.5 rounded-lg text-xs font-bold">2 NEW</span>
+</div>
+<div class="space-y-4">
+<!-- Incoming Row 1 -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 flex items-center justify-between shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-5">
+<div class="relative">
+<img alt="Sender" class="w-14 h-14 rounded-full border-4 border-secondary-container" data-alt="Close-up portrait of a young man with glasses, professional lighting, warm aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX698325CxZoL6sRlIP1c31KeDQJPck_Xmtbv-u7Bu-Vcltzoa7sGGN0nJ22rJrKKvbNqJUcPOpdyYqVUzSHK8C1zvv-f8iuIooxFf_F9P4CuGBAJrhMx6eQoerw88LMXL0g_SD7h4tDjrrfQKthW5VFem40DnHvei0_HGwvjeQv9Q0vOsMUGbv0IHcGwFkA0etyNAQaiK0ulqMTxgWh3syRo4bEVcOrq6boZ4XKzAz--xVlvipnYVGaZFzOMj2Xj0iP0Gs1wG-aQ"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 bg-secondary border-2 border-white rounded-full"></span>
+</div>
+<div>
+<p class="font-bold text-lg text-on-surface">Marcus Thorne <span class="font-normal text-on-surface-variant text-sm">wants to share a route</span></p>
+<p class="text-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">near_me</span>
+                                Downtown to Subway Station • 1.2 miles
+                            </p>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-secondary text-on-secondary rounded-2xl font-bold shadow-md shadow-secondary/20 hover:bg-secondary/90 transition-all">Accept</button>
+<button class="px-8 py-3 text-on-surface-variant font-bold rounded-2xl hover:bg-surface-container-high transition-all">Decline</button>
+</div>
+</div>
+<!-- Incoming Row 2 -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 flex items-center justify-between shadow-sm border border-outline-variant/10">
+<div class="flex items-center gap-5">
+<div class="relative">
+<img alt="Sender" class="w-14 h-14 rounded-full border-4 border-tertiary-fixed" data-alt="Portrait of a young woman looking thoughtful, natural soft focus background, cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWreINXijKG1gaLh7uI4Y3M4B-ZHAuVNc6WG8PM3bYFwGI3wLdimrMrKmPqPQMhYk8-yOsPhupcdww-DpuSxmRAhE00RcK51wYJSWmfqRTN3kl7igeyAAJGi3xXIbnsvgXseoDjCKHEC1PRIHZt8dtgYsb7eFkswJkhG8lhecOnIJkd7CnUMzlLA6LQLSwShsujSFB59fdSaWcHRkhTWeZfMQLWm08Wd3YnEN7rE8N6xcZalgII48OJjjiYar_L2QWzPyqUwIsX7g"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 bg-tertiary border-2 border-white rounded-full"></span>
+</div>
+<div>
+<p class="font-bold text-lg text-on-surface">Elena Rodriguez <span class="font-normal text-on-surface-variant text-sm">is requesting your guardianship</span></p>
+<p class="text-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">warning</span>
+                                Late Night Walk (High Alert) • 0.8 miles
+                            </p>
+</div>
+</div>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-tertiary text-on-tertiary rounded-2xl font-bold shadow-md shadow-tertiary/20 hover:bg-tertiary/90 transition-all">Accept</button>
+<button class="px-8 py-3 text-on-surface-variant font-bold rounded-2xl hover:bg-surface-container-high transition-all">Decline</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (FAB) - Contextual for main screen -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-tertiary text-on-tertiary rounded-full flex items-center justify-center shadow-2xl shadow-tertiary/40 hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">emergency_share</span>
+</button>
+</body></html>

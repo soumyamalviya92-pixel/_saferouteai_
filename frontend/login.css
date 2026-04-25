@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background-color: #f8f9fa;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+/* Left Section */
+.hero-section {
+    flex: 1.1;
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+    color: white;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.status-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.status-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #c6f6d5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkmark {
+    width: 10px;
+    height: 18px;
+    border: solid #38a169;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    margin-bottom: 4px;
+}
+
+.status-text strong {
+    display: block;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+.status-text span {
+    color: #718096;
+    font-size: 0.85rem;
+}
+
+/* Right Section */
+.login-section {
+    flex: 0.9;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    position: relative;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #1a202c;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #718096;
+    margin-bottom: 40px;
+}
+
+/* Form Styles */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #4a5568;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+}
+
+.label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot-link {
+    font-size: 0.75rem;
+    color: #3182ce;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    background-color: #edf2f7;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #2d3748;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 50px; /* Rounded pill shape from image */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #004494;
+}
+
+/* Social & Footer */
+.divider {
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+}
+
+.divider span {
+    background: #fff;
+    padding: 0 15px;
+    color: #a0aec0;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.social-login {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.social-btn img {
+    width: 18px;
+}
+
+.signup-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.signup-text a {
+    color: #3182ce;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px dashed #3182ce; /* Matching the focus indicator in the image */
+    padding: 2px 4px;
+}
+
+.footer-text {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.65rem;
+    color: #cbd5e0;
+    letter-spacing: 0.1em;
+}

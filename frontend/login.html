@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeRoute AI - Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1> Saferoute AI</h1>
+                <h1>Your safety is our priority.</h1>
+                <p>Access the Guardian Interface to monitor real-time safety metrics and secure your commute.</p>
+            </div>
+            
+            <div class="status-card">
+                <div class="status-icon">
+                    <div class="checkmark"></div>
+                </div>
+                <div class="status-text">
+                    <strong>Vigilant Sanctuary Active</strong>
+                    <span>Real-time threat detection enabled</span>
+                </div>
+            </div>
+        </section>
+
+        <main class="login-section">
+            <div class="login-box">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Enter your credentials to access your sanctuary.</p>
+
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label>EMAIL OR PHONE</label>
+                        <input type="text" placeholder="guardian@saferoute.ai" required>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="label-row">
+                            <label>PASSWORD</label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
+                        </div>
+                        <div class="password-wrapper">
+                            <input type="password" value="" placeholder="Enterpassword" id="passwordField">
+                            <span class="eye-icon">👁️</span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="login-btn"><a href="dash.html">Login to Interface</a></button>
+                </form>
+
+                <div class="divider">
+                    <span>OR CONTINUE WITH</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
+                        Google
+                    </button>
+                    
+                </div>
+                
+                <p class="signup-text">
+                    Don't have a Guardian account? <a href="signup.html">Create Profile</a>
+                </p>
+            </div>
+            <footer class="footer-text">
+            • SAFEROUTE AI NAVIGATE WITH INTELLIGENCE • 
+            </footer>
+        </main>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

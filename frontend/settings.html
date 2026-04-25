@@ -1,0 +1,225 @@
+//Settings
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings | SafeRoute AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-background": "#191C1D", "inverse-on-surface": "#F0F1F2", primary: "#005BBF", "on-secondary-fixed-variant": "#005320", "tertiary-container": "#DC392C", "surface-bright": "#F8F9FA", "surface-container-high": "#E7E8E9", "on-error-container": "#93000A", surface: "#F8F9FA", "error-container": "#FFDAD6", "surface-container-highest": "#E1E3E4", outline: "#727785", "inverse-primary": "#ADC7FF", error: "#BA1A1A", "secondary-fixed": "#89FA9B", secondary: "#006E2C", "primary-fixed": "#D8E2FF", "on-secondary-fixed": "#002108", "on-primary": "#FFFFFF", tertiary: "#B81D17", "surface-container-low": "#F3F4F5", "surface-tint": "#005BC0", "tertiary-fixed-dim": "#FFB4A9", "surface-dim": "#D9DADB", "surface-variant": "#E1E3E4", "on-primary-fixed": "#001A41", "secondary-fixed-dim": "#6DDD81", "surface-container-lowest": "#FFFFFF", "on-secondary": "#FFFFFF", "on-error": "#FFFFFF", "on-surface-variant": "#414754", "primary-fixed-dim": "#ADC7FF", "primary-container": "#1A73E8", "on-secondary-container": "#00722F", "inverse-surface": "#2E3132", "on-tertiary-fixed-variant": "#930004", "secondary-container": "#86F898", "on-tertiary-fixed": "#410001", "on-surface": "#191C1D", "tertiary-fixed": "#FFDAD5", "on-tertiary-container": "#FFFFFF", background: "#F8F9FA", "outline-variant": "#C1C6D6", "on-tertiary": "#FFFFFF", "on-primary-fixed-variant": "#004493", "on-primary-container": "#FFFFFF", "surface-container": "#EDEEEF"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, fontFamily: {headline: ["Manrope"], body: ["Inter"], label: ["Inter"], display: "Manrope"}}}};</script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .brand-font { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex min-h-screen">
+<!-- SideNavBar Anchor -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-slate-50 dark:bg-slate-900 flex flex-col">
+<div class="pt-8 px-6">
+<h1 class="text-lg font-bold text-slate-900 dark:text-slate-100 brand-font tracking-tight">SafeRoute AI</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 mt-1 font-semibold">Guardian Console</p>
+</div>
+<nav class="flex flex-col pt-12 px-4 space-y-2">
+<a  href="dash.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a  href="notification.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="crisis_alert">crisis_alert</span>
+<span>Alerts Center</span>
+</a>
+<a  href="reportincident.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+<span>Report Incident</span>
+</a>
+<a  href="settings.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+
+</nav>
+<div class="mt-auto p-6 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a professional woman with a friendly expression in a modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0YuVYez3wGs6f5GlSzaPmvU9r-LpBDScV575Z09SNuqQHV-31scQd_90i0O2LAMVbwuQ7MWpV15TIdozd-6Vg-m4zoRSQijRTBBWSqQ6Qco84udnxe-RIm08KoH4qTYopoUOKz4zBUSYGf80-8Cz8coXM6bUcs4l9rarfp0qWDyfLq5466nrR2jrA4agC-yZtkBLawpaSaLIYqDavfZ1aDqtbO_amOD2vndK13sarn3deVWsX39xu2qSFdabyRY9MZnqLc3v-3zM"/>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-slate-100">Alex Chen</p>
+<p class="text-[10px] text-slate-500">Pro Guard Member</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 p-12">
+<header class="mb-12">
+<h2 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Settings</h2>
+<p class="text-on-surface-variant max-w-2xl">Configure your vigilant sanctuary. Manage your safety preferences, emergency protocols, and data privacy to ensure every route is a safe one.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Safety Preferences Section -->
+<section class="lg:col-span-8 bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/15">
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-primary" data-icon="security">security</span>
+<h3 class="text-xl font-bold tracking-tight">Safety Preferences</h3>
+</div>
+<div class="space-y-6">
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+<div>
+<p class="font-bold text-on-surface">Women-Safe Mode</p>
+<p class="text-sm text-on-surface-variant">Prioritize routes with high-visibility and official safety hubs.</p>
+</div>
+<button class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-primary">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+<div>
+<p class="font-bold text-on-surface">Avoid Night Travel</p>
+<p class="text-sm text-on-surface-variant">Warn and suggest alternative transport for routes after 10 PM.</p>
+</div>
+<button class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-surface-container-highest">
+<span class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+<div>
+<p class="font-bold text-on-surface">Avoid Low Crowd Routes</p>
+<p class="text-sm text-on-surface-variant">Route through busy public spaces and well-lit thoroughfares.</p>
+</div>
+<button class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-primary">
+<span class="translate-x-5 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+</section>
+<!-- Emergency SOS Settings Section -->
+<section class="lg:col-span-4 flex flex-col gap-8">
+<div class="bg-tertiary-container/10 p-8 rounded-xl border border-tertiary-container/20">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="emergency">emergency</span>
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Emergency SOS</h3>
+</div>
+<div class="space-y-4 mb-8">
+<p class="text-sm font-semibold text-on-surface mb-2">Emergency Contacts</p>
+<div class="flex items-center justify-between bg-surface-container-lowest p-3 rounded-lg border border-outline-variant/10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-on-surface-variant" data-icon="person">person</span>
+<span class="text-sm font-medium">Sarah Jenkins</span>
+</div>
+<span class="material-symbols-outlined text-sm text-on-surface-variant cursor-pointer" data-icon="edit">edit</span>
+</div>
+<button class="w-full py-2 flex items-center justify-center gap-2 text-primary font-bold text-sm bg-primary-fixed/30 rounded-lg hover:bg-primary-fixed/50 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                            Add Contact
+                        </button>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium">Silent SOS Mode</span>
+<span class="material-symbols-outlined text-primary" data-icon="toggle_on">toggle_on</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-sm font-medium">Audio Recording</span>
+<span class="material-symbols-outlined text-primary" data-icon="toggle_on">toggle_on</span>
+</div>
+</div>
+</div>
+<div class="bg-primary p-6 rounded-xl text-on-primary">
+<p class="text-xs uppercase tracking-widest font-bold opacity-80 mb-2">Pro Feature</p>
+<p class="font-bold mb-4">Real-time Guardian monitoring is active.</p>
+<button class="w-full py-2 bg-on-primary text-primary font-bold rounded-lg text-sm">View Security Log</button>
+</div>
+</section>
+<!-- Notifications Section -->
+<section class="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/15">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+<h3 class="text-xl font-bold tracking-tight">Notifications</h3>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors">
+<div>
+<p class="font-bold text-sm">Risk Alerts</p>
+<p class="text-xs text-on-surface-variant">Real-time warnings for route anomalies.</p>
+</div>
+<input checked="" class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors">
+<div>
+<p class="font-bold text-sm">Community Updates</p>
+<p class="text-xs text-on-surface-variant">Stay informed on local safety reports.</p>
+</div>
+<input checked="" class="rounded text-primary focus:ring-primary h-5 w-5" type="checkbox"/>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg hover:bg-surface-container-low transition-colors">
+<div>
+<p class="font-bold text-sm">Email Digest</p>
+<p class="text-xs text-on-surface-variant">Weekly summary of your safe travel stats.</p>
+</div>
+<input class="rounded text-primary focus:ring-primary h-5 w-5 border-outline-variant" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Account & Privacy Section -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/15">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="privacy_tip">privacy_tip</span>
+<h3 class="text-xl font-bold tracking-tight">Account &amp; Privacy</h3>
+</div>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div>
+<p class="font-bold text-sm">Location History</p>
+<p class="text-xs text-on-surface-variant">Encrypted logs for safety verification.</p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-bold text-primary hover:underline">View</button>
+<button class="px-3 py-1 text-xs font-bold text-error">Delete</button>
+</div>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-low">
+<div>
+<p class="font-bold text-sm">Data Sharing</p>
+<p class="text-xs text-on-surface-variant">Anonymous data for community safety.</p>
+</div>
+<button class="relative inline-flex h-5 w-9 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none bg-surface-container-highest">
+<span class="translate-x-0 pointer-events-none inline-block h-4 w-4 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<div class="pt-2">
+<button class="flex items-center gap-2 text-primary font-bold text-sm hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined text-sm" data-icon="key">key</span>
+    Change Password   </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Decorative Image Banner -->
+<section class="lg:col-span-12 mt-4">
+<div class="relative h-48 rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="abstract wide angle of a futuristic city skyline at twilight with glowing blue transit lines and safe-haven buildings illuminated" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHINMmLYCWOMvJyo8T4E2Jm6crX6_161cKtsk9iMos9sSjnaF_PgeaIm8A-YWDU_7lXsZtqp8EHbYHDHWcb2SaRJrNdEXMtcgL-dZT-UZwL3QEap83s15-SD1YVCWAP-Jr3TNIF6jcxqwjnplykGguKIBwm8Id7YuEwRKeHDziqgroxJcVu6Fps10mrPJQmVJvY0PXGKLHSIAkMNoJq6-MbJoMKIDxOE8GYAsKKgvQZF3C79MBMZe96RkZVhvVTOsQ9T_rA2Y9FmQ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/80 to-transparent flex flex-col justify-center px-12">
+<h4 class="text-2xl font-extrabold text-white mb-2">SafeRoute AI</h4>
+<p class="text-blue-100 max-w-sm">Your security is our mission. Thank you for making transit safer for everyone.</p>
+</div>
+</div>
+</section>
+</div>
+<footer class="mt-16 text-center text-on-surface-variant text-xs">
+<p>© 2024 SafeRoute AI. All safety logs are E2E encrypted. Guardian Protocol v4.2.1</p>
+</footer>
+</main>
+</body>
+</html>

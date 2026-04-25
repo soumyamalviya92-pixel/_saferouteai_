@@ -1,0 +1,211 @@
+:root {
+    --primary-blue: #0066cc;
+    --bg-light: #f8fafc;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    overflow: hidden;
+}
+
+/* Left Section */
+.form-section {
+    flex: 1;
+    padding: 60px 80px;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.brand-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+
+.form-content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.social-login {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.social-btn img { width: 18px; }
+
+.divider {
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    margin: 20px 0;
+    position: relative;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.input-group input {
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: #f1f5f9;
+    font-size: 0.9rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .input-group { flex: 1; }
+
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin: 20px 0;
+}
+
+.terms a { color: var(--primary-blue); text-decoration: none; }
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.login-link {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Right Section */
+.info-section {
+    flex: 1;
+    background-color: #0056b3;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 20px;
+    color: #333;
+    width: 80%;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.status-badge { margin-right: 10px; }
+.card-header { display: flex; align-items: center; margin-bottom: 10px; }
+.status-title { font-size: 0.7rem; font-weight: 800; color: #0056b3; }
+.status-location { font-weight: 700; }
+.quote { font-style: italic; font-size: 0.85rem; color: #555; line-height: 1.4; }
+
+.contacts-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-stack { display: flex; align-items: center; margin-left: auto; }
+.avatar, .avatar-more {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: -10px;
+}
+.avatar-more {
+    background: #eee;
+    font-size: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.hero-text { margin-top: 40px; }
+.hero-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
+.hero-text span { color: #82f9b1; } /* Light green accent */
+.hero-text p { opacity: 0.9; line-height: 1.6; max-width: 400px; }
+
+@media (max-width: 900px) {
+    .main-container { flex-direction: column; height: auto; }
+    .info-section { display: none; }
+    .form-section { padding: 40px 20px; }
+}

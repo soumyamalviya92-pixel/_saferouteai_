@@ -1,0 +1,273 @@
+//Notifications & Alert
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-bright": "#F8F9FA", "surface-container-low": "#F3F4F5", "surface-container-high": "#E7E8E9", "surface-dim": "#D9DADB", secondary: "#006E2C", "surface-variant": "#E1E3E4", "on-primary": "#FFFFFF", "primary-fixed-dim": "#ADC7FF", "error-container": "#FFDAD6", "on-secondary-fixed-variant": "#005320", "primary-container": "#1A73E8", "on-surface": "#191C1D", error: "#BA1A1A", "on-secondary-fixed": "#002108", "on-secondary-container": "#00722F", "on-tertiary": "#FFFFFF", "on-primary-fixed-variant": "#004493", "on-secondary": "#FFFFFF", "on-primary-container": "#FFFFFF", "surface-container-lowest": "#FFFFFF", "on-error": "#FFFFFF", primary: "#005BBF", "secondary-fixed": "#89FA9B", "inverse-primary": "#ADC7FF", "tertiary-container": "#DC392C", surface: "#F8F9FA", "on-background": "#191C1D", "inverse-on-surface": "#F0F1F2", "primary-fixed": "#D8E2FF", "inverse-surface": "#2E3132", "on-tertiary-fixed": "#410001", background: "#F8F9FA", "secondary-container": "#86F898", "tertiary-fixed-dim": "#FFB4A9", "surface-container-highest": "#E1E3E4", "on-tertiary-fixed-variant": "#930004", tertiary: "#B81D17", "tertiary-fixed": "#FFDAD5", "on-surface-variant": "#414754", "on-primary-fixed": "#001A41", "on-tertiary-container": "#FFFFFF", "surface-tint": "#005BC0", "surface-container": "#EDEEEF", "on-error-container": "#93000A", "outline-variant": "#C1C6D6", outline: "#727785", "secondary-fixed-dim": "#6DDD81"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, fontFamily: {headline: ["Manrope"], body: ["Inter"], label: ["Inter"], display: "Manrope"}}}};</script>
+<style>
+        .glass-header {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+        .shadow-ambient {
+            box-shadow: 0 4px 24px -2px rgba(25, 28, 29, 0.04);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e1e3e4; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-header shadow-sm flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-blue-700 dark:text-blue-400 tracking-tighter font-headline">SafeRoute AI</span>
+<div class="hidden md:flex items-center space-x-6">
+<a class="text-slate-600 dark:text-slate-400 font-manrope text-sm font-bold tracking-tight hover:text-blue-500 transition-colors" href="#">Dashboard</a>
+<a class="text-slate-600 dark:text-slate-400 font-manrope text-sm font-bold tracking-tight hover:text-blue-500 transition-colors" href="#">Safety Map</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-600 font-manrope text-sm font-bold tracking-tight" href="notification.html">Alerts Center</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="cursor-pointer active:opacity-70 transition-opacity text-slate-600">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="cursor-pointer active:opacity-70 transition-opacity text-slate-600">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<img alt="User profile" class="w-8 h-8 rounded-full object-cover" data-alt="Professional headshot of a person with friendly expression, soft studio lighting, neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZpJTzcm5cJiiFQFZ3odpvafbIOARqdJg9bWuD7wis0QR7x983lXqBeD4RKwNah_cIRZME3lfSpUkV8DqChtgab63U8s5l8tRxfHMXgBFBfDeAZMQdZLZL6NN0i5j1PLz8Ttv9RIXhTrS3KXc_Gugj5WYQRss6OKUxAqLR80yIiK8NKKIJOjP_mDERtZoZJGlsgTnXOGzTkXzvECg3TQFaF7XkMx3GlcO4BxpkXmF6eivuYGlr6N8Xh_sW1Qo4E41vzSyhcvVD1SM"/>
+</div>
+</nav>
+<!-- SideNavBar (Ghost Sidebar) -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-slate-100 dark:bg-slate-950 flex flex-col py-8 px-4 space-y-2 pt-24 hidden lg:flex">
+<div class="mb-8 px-2">
+<h2 class="text-xs uppercase tracking-widest text-outline font-bold mb-4">Navigation</h2>
+<div class="space-y-1">
+
+
+<a  href="dash.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a  href="notification.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="crisis_alert">crisis_alert</span>
+<span>Alerts Center</span>
+</a>
+<a  href="reportincident.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+<span>Report Incident</span>
+</a>
+<a  href="settings.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+
+
+
+
+
+
+</div>
+</div>
+<div class="mt-auto px-2 space-y-4">
+<button class="w-full py-4 bg-tertiary text-on-tertiary rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-error/20 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="emergency" data-weight="fill" style="font-variation-settings: 'FILL' 1;">emergency</span>
+                Trigger SOS
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="lg:ml-64 pt-24 pb-12 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h1 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-2">Vigilant Alerts</h1>
+<p class="text-on-surface-variant text-lg">Real-time safety intelligence and community insights.</p>
+</div>
+<!-- Filters Tabs -->
+<div class="inline-flex p-1 bg-surface-container-low rounded-xl shadow-inner">
+<button class="px-6 py-2 rounded-lg bg-surface-container-lowest shadow-sm text-primary font-bold text-sm transition-all">All</button>
+<button class="px-6 py-2 rounded-lg text-on-surface-variant font-medium text-sm hover:text-on-surface transition-all">Unread</button>
+<button class="px-6 py-2 rounded-lg text-on-surface-variant font-medium text-sm hover:text-on-surface transition-all flex items-center gap-2">
+                    Critical 
+                    <span class="w-2 h-2 bg-error rounded-full"></span>
+</button>
+</div>
+</header>
+<div class="bento-grid">
+<!-- Sidebar: Stats & Verified Status (Asymmetric Layout) -->
+<div class="col-span-12 xl:col-span-4 space-y-6">
+<!-- Safety Status Card -->
+<div class="p-8 bg-surface-container-lowest rounded-[2rem] shadow-ambient relative overflow-hidden border-none">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full -mr-16 -mt-16"></div>
+<div class="relative z-10">
+<span class="text-xs font-bold tracking-[0.2em] text-secondary uppercase mb-4 block">System Status</span>
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-2xl bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" data-icon="shield_checked" data-weight="fill" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<h3 class="font-headline text-2xl font-bold">Guardian Active</h3>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-center py-2 border-none">
+<span class="text-on-surface-variant text-sm">Verified Safe Zones</span>
+<span class="font-bold text-on-surface">124</span>
+</div>
+<div class="flex justify-between items-center py-2 border-none">
+<span class="text-on-surface-variant text-sm">Active Alerts</span>
+<span class="font-bold text-error">2</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Verified Pulse Card -->
+<div class="p-8 bg-primary-container text-on-primary-container rounded-[2rem] shadow-ambient overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_50%,#fff,transparent)] animate-pulse"></div>
+<span class="text-xs font-bold tracking-[0.2em] uppercase mb-4 block opacity-80">Community Verified</span>
+<h3 class="font-headline text-xl font-bold mb-4">Safe Route Found</h3>
+<p class="text-on-primary-container/80 text-sm mb-6 leading-relaxed">15 users verified "North End Path" as well-lit and secure in the last 10 minutes.</p>
+<button class="w-full py-3 bg-white text-primary font-bold rounded-xl active:scale-95 transition-transform">
+                        Explore Route
+                    </button>
+</div>
+</div>
+<!-- Main Notification Feed -->
+<div class="col-span-12 xl:col-span-8 space-y-4">
+<!-- Category Section: Safety Alerts -->
+<div class="flex items-center gap-3 mb-6 px-2">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+<h2 class="font-headline text-sm font-extrabold tracking-widest uppercase text-on-surface-variant">Safety Alerts</h2>
+</div>
+<!-- Alert Card: Critical -->
+<div class="group bg-surface-container-lowest rounded-3xl p-6 flex flex-col md:flex-row gap-6 shadow-ambient transition-all hover:translate-y-[-2px] border-l-4 border-error">
+<div class="flex-shrink-0">
+<div class="w-14 h-14 rounded-2xl bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-3xl" data-icon="report" data-weight="fill" style="font-variation-settings: 'FILL' 1;">report</span>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">New Incident Reported on your Frequent Route</h3>
+<span class="text-xs font-medium text-outline">2 mins ago</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed max-w-xl">Multiple users reported a lighting failure and suspicious activity near the Central Park underpass. We recommend an alternative route.</p>
+<div class="flex flex-wrap gap-3">
+<button class="px-5 py-2.5 bg-primary text-white text-sm font-bold rounded-xl hover:bg-primary-container transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="map">map</span>
+                                View on Map
+                            </button>
+<button class="px-5 py-2.5 text-on-surface-variant text-sm font-bold hover:bg-surface-container-high rounded-xl transition-colors">Dismiss</button>
+</div>
+</div>
+</div>
+<!-- Alert Card: Warning -->
+<div class="group bg-surface-container-lowest rounded-3xl p-6 flex flex-col md:flex-row gap-6 shadow-ambient transition-all hover:translate-y-[-2px]">
+<div class="flex-shrink-0">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-3xl" data-icon="construction">construction</span>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">Transit Delay: Line 4 South</h3>
+<span class="text-xs font-medium text-outline">15 mins ago</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed max-w-xl">Expect 10-15 minute delays due to maintenance. High congestion at State Street station.</p>
+<div class="flex flex-wrap gap-3">
+<button class="px-5 py-2.5 bg-surface-container-highest text-on-surface font-bold text-sm rounded-xl hover:bg-surface-container-high transition-colors">Route Details</button>
+<button class="px-5 py-2.5 text-on-surface-variant text-sm font-bold hover:bg-surface-container-high rounded-xl transition-colors">Dismiss</button>
+</div>
+</div>
+</div>
+<!-- Category Section: Community -->
+<div class="flex items-center gap-3 mt-12 mb-6 px-2">
+<span class="material-symbols-outlined text-secondary" data-icon="groups">groups</span>
+<h2 class="font-headline text-sm font-extrabold tracking-widest uppercase text-on-surface-variant">Community Updates</h2>
+</div>
+<!-- Community Card -->
+<div class="group bg-surface-container-lowest rounded-3xl p-6 flex flex-col md:flex-row gap-6 shadow-ambient transition-all hover:translate-y-[-2px] border-l-4 border-secondary">
+<div class="flex-shrink-0">
+<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-3xl" data-icon="verified_user">verified_user</span>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">Safe Zone verified by 15 users</h3>
+<span class="text-xs font-medium text-outline">45 mins ago</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed max-w-xl">"Market District Plaza" has been marked as a Safe Zone with high visibility and active guardian presence.</p>
+<div class="flex flex-wrap gap-3">
+<button class="px-5 py-2.5 bg-secondary text-white text-sm font-bold rounded-xl hover:bg-secondary/90 transition-colors">See Reviews</button>
+<button class="px-5 py-2.5 text-on-surface-variant text-sm font-bold hover:bg-surface-container-high rounded-xl transition-colors">Dismiss</button>
+</div>
+</div>
+</div>
+<!-- Category Section: System -->
+<div class="flex items-center gap-3 mt-12 mb-6 px-2">
+<span class="material-symbols-outlined text-primary" data-icon="analytics">analytics</span>
+<h2 class="font-headline text-sm font-extrabold tracking-widest uppercase text-on-surface-variant">System Reports</h2>
+</div>
+<!-- System Card -->
+<div class="group bg-surface-container-lowest rounded-3xl p-6 flex flex-col md:flex-row gap-6 shadow-ambient transition-all hover:translate-y-[-2px]">
+<div class="flex-shrink-0">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="update">update</span>
+</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<h3 class="font-headline font-bold text-lg text-on-surface">Weekly Safety Summary Ready</h3>
+<span class="text-xs font-medium text-outline">1 day ago</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4 leading-relaxed max-w-xl">Your customized weekly safety report for October 1-7 is now available. Insights show a 12% improvement in route efficiency.</p>
+<div class="flex flex-wrap gap-3">
+<button class="px-5 py-2.5 bg-primary-container text-white text-sm font-bold rounded-xl hover:bg-primary transition-colors">Download PDF</button>
+<button class="px-5 py-2.5 text-on-surface-variant text-sm font-bold hover:bg-surface-container-high rounded-xl transition-colors">Dismiss</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-slate-50/80 backdrop-blur-md shadow-lg flex justify-around items-center h-20 px-4 z-50">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="text-[10px] font-bold">Map</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-blue-700">
+<div class="absolute -top-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg border-4 border-slate-50">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+<span class="mt-8 text-[10px] font-bold">Alerts</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="text-[10px] font-bold">History</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-bold">Menu</span>
+</button>
+</nav>
+</body></html>

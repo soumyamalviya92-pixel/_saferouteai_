@@ -1,0 +1,113 @@
+:root {
+    --bg-dark: #0f172a;
+    --sidebar-bg: #f8fafc;
+    --accent-blue: #2563eb;
+    --safe-green: #22c55e;
+    --card-glass: rgba(255, 255, 255, 0.9);
+}
+
+body, html {
+    margin: 0; padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    height: 100%; overflow: hidden;
+}
+
+.app-container { display: flex; height: 100vh; }
+
+/* Sidebar */
+.sidebar {
+    width: 240px; background: var(--sidebar-bg);
+    display: flex; flex-direction: column;
+    padding: 20px; border-right: 1px solid #e2e8f0;
+}
+
+.logo h2 { color: var(--accent-blue); margin: 0; font-size: 1.5rem; }
+.logo span { font-size: 0.7rem; letter-spacing: 1px; color: #64748b; }
+
+nav { margin-top: 40px; flex-grow: 1; }
+.nav-item {
+    padding: 12px; color: #64748b; cursor: pointer;
+    border-radius: 8px; margin-bottom: 5px; transition: 0.3s;
+}
+.nav-item i { margin-right: 10px; width: 20px; }
+.nav-item.active, .nav-item:hover {
+    background: #eff6ff; color: var(--accent-blue);
+}
+
+/* Main Content */
+.main-content { flex-grow: 1; position: relative; }
+
+#map { height: 100%; width: 100%; z-index: 1; background: #1e293b; }
+
+/* Overlays */
+.top-bar {
+    position: absolute; top: 0; left: 0; right: 0;
+    z-index: 10; padding: 15px 30px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.search-container {
+    background: white; padding: 8px 15px; border-radius: 20px;
+    width: 300px; display: flex; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.search-container input { border: none; outline: none; margin-left: 10px; width: 100%; }
+
+.header-icons { display: flex; gap: 20px; align-items: center; }
+.user-avatar { width: 35px; height: 35px; background: #cbd5e1; border-radius: 50%; }
+
+.overlay-left {
+    position: absolute; top: 80px; left: 20px;
+    z-index: 10; width: 320px; display: flex; flex-direction: column; gap: 20px;
+}
+
+.card {
+    background: var(--card-glass); padding: 20px;
+    border-radius: 16px; backdrop-filter: blur(10px);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+.card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.badge { background: #dcfce7; color: var(--safe-green); padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; }
+
+.status-score h1 { margin: 0; color: var(--accent-blue); }
+.status-score span { font-size: 1rem; color: #64748b; }
+.safety-text { color: var(--safe-green); font-weight: bold; margin: 5px 0; }
+
+.progress-bar { height: 6px; background: #e2e8f0; border-radius: 3px; margin: 15px 0; }
+.progress-bar .fill { width: 98%; height: 100%; background: var(--accent-blue); border-radius: 3px; }
+
+.presence-info { display: flex; gap: 10px; align-items: center; font-size: 0.85rem; }
+
+.route-item {
+    display: flex; align-items: center; gap: 15px;
+    padding: 12px 0; border-bottom: 1px solid #e2e8f0;
+}
+.route-details { flex-grow: 1; font-size: 0.8rem; }
+.route-safety { text-align: right; color: var(--safe-green); font-weight: bold; }
+
+.bottom-status {
+    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+    z-index: 10;
+}
+.status-pill {
+    background: white; padding: 10px 20px; border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-size: 0.9rem;
+}
+.dot { height: 10px; width: 10px; background: var(--safe-green); border-radius: 50%; display: inline-block; margin-right: 8px; }
+.green-text { color: var(--safe-green); font-weight: bold; }
+.status-pill a { margin-left: 15px; color: var(--accent-blue); text-decoration: none; font-weight: bold; }
+
+.action-buttons {
+    position: absolute; bottom: 30px; right: 30px;
+    z-index: 10; display: flex; flex-direction: column; align-items: flex-end; gap: 15px;
+}
+.report-btn {
+    background: white; border: none; padding: 12px 20px;
+    border-radius: 20px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.sos-btn {
+    width: 60px; height: 60px; background: #ef4444; color: white;
+    border-radius: 50%; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; font-weight: bold; font-size: 0.8rem;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); cursor: pointer;
+}

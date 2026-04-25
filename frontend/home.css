@@ -1,0 +1,186 @@
+:root {
+    --primary-blue: #0056b3;
+    --bg-light: #f8fafc;
+    --text-dark: #1e293b;
+    --green-badge: #4ade80;
+    --sos-red: #d3422d;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    max-width: 1100px;
+    gap: 50px;
+    padding: 20px;
+    align-items: center;
+}
+
+/* Left Content */
+.badge {
+    background: #dcfce7;
+    color: #166534;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin: 20px 0;
+    font-weight: 800;
+}
+
+.blue-text { color: var(--primary-blue); }
+
+p {
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 450px;
+}
+
+.cta-group {
+    margin: 30px 0;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color:#679ae1;
+    color:beige;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    border-style: dashed;
+    border-color:blue;
+   font-display: swap;
+}
+.btn-primary:hover {
+    background: #5d9feb;
+    border-style: dashed;
+    border-color:blue;
+    transform: perspective(500px) translateZ(50px);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid #cbd5e1;
+    padding: 15px 35px;
+    border-radius: 8px;
+    color: white;
+    border-style: dashed;
+    cursor: pointer;
+}
+.btn-secondary:hover {  
+    border-style: dashed;
+    border-color:blue;
+    transform: perspective(500px) translateZ(50px);
+}
+/* Right Side UI */
+.ui-grid {
+    display: grid;
+    grid-template-columns: 300px 150px;
+    gap: 20px;
+    position: relative;
+}
+
+.main-card {
+    grid-row: span 2;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.main-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+
+.live-tag {
+    font-size: 10px;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+/* Side Panels */
+.safety-rating {
+    background: white;
+    padding: 20px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.safety-rating h2 { margin: 10px 0 0; font-size: 24px; }
+.safety-rating span { font-size: 10px; color: #94a3b8; font-weight: bold; }
+
+.sos-hub {
+    background: var(--sos-red);
+    color: white;
+    padding: 20px;
+    border-radius: 24px;
+    text-align: center;
+}
+.sos-hub:hover {
+    background: #c3422d;
+    transform: perspective(600px) translateZ(40px);
+}
+
+.asterisk { font-size: 30px; }
+
+/* Grand Central Status */
+.status-bar {
+    grid-column: span 2;
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+}
+
+.station-icon {
+    width: 50px;
+    height: 50px;
+    background: #334155;
+    border-radius: 12px;
+}
+
+.progress-bg {
+    width: 150px;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    margin-top: 8px;
+}
+
+.progress-fill {
+    width: 70%;
+    height: 100%;
+    background: var(--primary-blue);
+    border-radius: 10px;
+}

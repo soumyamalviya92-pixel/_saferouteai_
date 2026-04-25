@@ -1,0 +1,80 @@
+/* emergencysos.css: Custom styles for countdown and popup */
+.sos-countdown-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeInBg 0.3s;
+}
+@keyframes fadeInBg {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.sos-countdown {
+  background: rgba(255,255,255,0.95);
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  font-family: 'Manrope', 'Inter', sans-serif;
+  color: #B81D17;
+  box-shadow: 0 0 40px 0 rgba(184,29,23,0.15);
+  animation: popIn 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+.sos-countdown.shrink {
+  animation: shrinkOut 0.3s forwards;
+}
+@keyframes shrinkOut {
+  to { transform: scale(0.6); opacity: 0; }
+}
+.sos-popup {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  z-index: 1100;
+  text-align: center;
+  animation: popupIn 0.4s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes popupIn {
+  0% { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
+  80% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+.sos-popup h2 {
+  color: #005BBF;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Manrope', 'Inter', sans-serif;
+}
+.sos-popup button {
+  margin-top: 1.5rem;
+  padding: 0.7rem 2.2rem;
+  background: #B81D17;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(184,29,23,0.08);
+  transition: background 0.2s;
+}
+.sos-popup button:hover {
+  background: #930004;
+}

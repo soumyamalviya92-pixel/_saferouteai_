@@ -1,0 +1,281 @@
+//Report Incident
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Incident Reports | SafeRoute AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-container": "#EDEEEF", "on-tertiary": "#FFFFFF", "on-secondary-fixed-variant": "#005320", "on-secondary-fixed": "#002108", "on-primary-container": "#FFFFFF", "on-tertiary-fixed-variant": "#930004", "on-primary-fixed-variant": "#004493", "tertiary-container": "#DC392C", "surface-variant": "#E1E3E4", "surface-container-low": "#F3F4F5", "primary-fixed-dim": "#ADC7FF", "on-background": "#191C1D", "surface-tint": "#005BC0", "surface-container-high": "#E7E8E9", primary: "#005BBF", "tertiary-fixed": "#FFDAD5", tertiary: "#B81D17", error: "#BA1A1A", "on-surface-variant": "#414754", "on-secondary-container": "#00722F", "on-surface": "#191C1D", "error-container": "#FFDAD6", background: "#F8F9FA", "primary-container": "#1A73E8", "secondary-fixed-dim": "#6DDD81", "on-error-container": "#93000A", "surface-dim": "#D9DADB", "outline-variant": "#C1C6D6", outline: "#727785", "surface-container-highest": "#E1E3E4", "tertiary-fixed-dim": "#FFB4A9", "surface-container-lowest": "#FFFFFF", surface: "#F8F9FA", "on-tertiary-container": "#FFFFFF", "on-error": "#FFFFFF", "on-tertiary-fixed": "#410001", "on-primary-fixed": "#001A41", "inverse-primary": "#ADC7FF", "surface-bright": "#F8F9FA", secondary: "#006E2C", "on-secondary": "#FFFFFF", "on-primary": "#FFFFFF", "inverse-on-surface": "#F0F1F2", "secondary-container": "#86F898", "inverse-surface": "#2E3132", "secondary-fixed": "#89FA9B", "primary-fixed": "#D8E2FF"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, fontFamily: {headline: ["Manrope"], body: ["Inter"], label: ["Inter"], display: "Manrope"}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface flex min-h-screen">
+<!-- SideNavBar (Authority: JSON & Design System) -->
+<aside class="h-screen w-64 fixed left-0 top-0 z-40 bg-slate-100 dark:bg-slate-950 flex flex-col h-full p-4 space-y-2">
+<div class="mb-8 px-2 flex items-center space-x-3">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</div>
+<div>
+<h1 class="text-lg font-bold text-blue-700 dark:text-blue-400 leading-none">Guardian Admin</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mt-1">Vigilant Sanctuary</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a  href="dash.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a  href="notification.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="crisis_alert">crisis_alert</span>
+<span>Alerts Center</span>
+</a>
+<a  href="reportincident.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="report_problem">report_problem</span>
+<span>Report Incident</span>
+</a>
+<a  href="settings.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+
+</nav>
+<div class="mt-auto space-y-1">
+    <a href="emergencysos.html">
+<button class="w-full mb-4 bg-tertiary text-white py-3 rounded-xl font-bold flex items-center justify-center space-x-2 shadow-lg shadow-tertiary/20 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="emergency" data-weight="fill" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<span>Emergency SOS</span>
+</a>
+</button>
+<a class="flex items-center space-x-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="contact_support">contact_support</span>
+<span class="font-medium text-sm">Support</span>
+</a>
+<a class="flex items-center space-x-3 px-3 py-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg transition-transform duration-200 hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-medium text-sm">Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 p-8 bg-surface">
+<header class="mb-10 flex items-end justify-between">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-extrabold text-on-surface tracking-tight leading-tight">Report an Incident</h2>
+<p class="text-on-surface-variant mt-2 text-lg">Your reports help the community travel safer. Fill out the details below to alert authorities and fellow commuters.</p>
+</div>
+<div class="flex items-center space-x-4">
+<div class="bg-surface-container-low px-4 py-2 rounded-full flex items-center space-x-2">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<span class="text-xs font-bold text-on-secondary-container tracking-wide uppercase">System Live</span>
+</div>
+</div>
+</header>
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Multi-step Form -->
+<section class="col-span-8 space-y-8">
+<!-- Step 1: Category Selection -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-sm">
+<div class="flex items-center space-x-4 mb-6">
+<span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">1</span>
+<h3 class="text-xl font-bold">Select Category</h3>
+</div>
+<div class="grid grid-cols-5 gap-4">
+<button class="flex flex-col items-center p-4 rounded-2xl bg-surface-container-low hover:bg-primary/5 border-2 border-transparent hover:border-primary transition-all group">
+<div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+</div>
+<span class="text-xs font-bold text-center">Harassment</span>
+</button>
+<button class="flex flex-col items-center p-4 rounded-2xl bg-surface-container-low hover:bg-primary/5 border-2 border-transparent hover:border-primary transition-all group">
+<div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+</div>
+<span class="text-xs font-bold text-center">Theft</span>
+</button>
+<button class="flex flex-col items-center p-4 rounded-2xl bg-primary/10 border-2 border-primary transition-all group">
+<div class="w-12 h-12 rounded-xl bg-primary shadow-sm flex items-center justify-center text-white mb-3 scale-110">
+<span class="material-symbols-outlined" data-icon="directions_bus">directions_bus</span>
+</div>
+<span class="text-xs font-bold text-center text-primary">Unsafe Driving</span>
+</button>
+<button class="flex flex-col items-center p-4 rounded-2xl bg-surface-container-low hover:bg-primary/5 border-2 border-transparent hover:border-primary transition-all group">
+<div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+<span class="text-xs font-bold text-center">Overcrowding</span>
+</button>
+<button class="flex flex-col items-center p-4 rounded-2xl bg-surface-container-low hover:bg-primary/5 border-2 border-transparent hover:border-primary transition-all group">
+<div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center text-primary mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="construction">construction</span>
+</div>
+<span class="text-xs font-bold text-center">Infrastructure</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Location and Time -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-sm">
+<div class="flex items-center space-x-4 mb-6">
+<span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">2</span>
+<h3 class="text-xl font-bold">Location and Time</h3>
+</div>
+<div class="grid grid-cols-2 gap-6 mb-6">
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface-variant block ml-1">Precise Location</label>
+<div class="relative">
+<input class="w-full bg-surface-container-highest border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-t-lg px-4 py-3 font-medium" type="text" value="Downtown Terminal - Platform 4"/>
+<span class="material-symbols-outlined absolute right-4 top-3 text-primary" data-icon="my_location">my_location</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-bold text-on-surface-variant block ml-1">Time of Incident</label>
+<input class="w-full bg-surface-container-highest border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-t-lg px-4 py-3 font-medium" type="time" value="14:30"/>
+</div>
+</div>
+<div class="h-64 rounded-2xl overflow-hidden relative group">
+<img alt="City map" class="w-full h-full object-cover" data-alt="detailed overhead street map of an urban city center with colorful route lines and glowing points of interest" data-location="New York City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOxHrtFpNmTtIrL6nbDZhkpb7VExrhpbSPHH3vJ0Fk-CqHM0jcN_UAJM3w84qcliqGsDaCzYo8GuUWcgIeLwckyH88N3B-qzadutiGbw0p3kGfClzrtdmTG6IvNtjhnxZ_ve2v-KH_gADgmlixYp2-esYYNpSP8l66imXB5AB7-sWfaw_SINSsgRb-f9zSFWTb628L1Sk16IGfm8Ir362k0dAT_WV3ItkIumJ78FdABx7sjEkYrWwOOu2WD6GemGxkFK_Fb_lYuiU"/>
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+<!-- Proximity Pulse UI -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="w-6 h-6 bg-primary rounded-full border-4 border-white shadow-xl relative">
+<div class="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"></div>
+</div>
+</div>
+<div class="absolute bottom-4 left-4 right-4 backdrop-blur-md bg-white/80 p-3 rounded-xl flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined text-secondary" data-icon="verified_user">verified_user</span>
+<span class="text-xs font-bold">Proximity to "Safe Station 04" confirmed</span>
+</div>
+<button class="text-xs font-extrabold text-primary hover:underline">Adjust Pin</button>
+</div>
+</div>
+</div>
+<!-- Step 3: Description and Media -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-sm">
+<div class="flex items-center space-x-4 mb-6">
+<span class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm">3</span>
+<h3 class="text-xl font-bold">Description and Media</h3>
+</div>
+<div class="space-y-6">
+<div>
+<label class="text-sm font-bold text-on-surface-variant block ml-1 mb-2">Detailed Description</label>
+<textarea class="w-full bg-surface-container-highest border-none border-b-2 border-transparent focus:border-primary focus:ring-0 rounded-t-lg px-4 py-3 font-medium placeholder:text-slate-400" placeholder="Describe what happened, including any vehicle numbers, descriptions of individuals, or specific safety concerns..." rows="4"></textarea>
+</div>
+<div class="border-2 border-dashed border-outline-variant/50 rounded-2xl p-8 flex flex-col items-center justify-center bg-surface-container-low/30 hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="add_a_photo">add_a_photo</span>
+</div>
+<p class="font-bold text-on-surface">Upload Evidence</p>
+<p class="text-xs text-on-surface-variant mt-1">Drag and drop images or videos here (Max 50MB)</p>
+<button class="mt-4 px-6 py-2 bg-white rounded-full text-xs font-bold border border-outline-variant shadow-sm hover:shadow-md transition-all">Select Files</button>
+</div>
+</div>
+</div>
+<!-- Submit Section -->
+<div class="flex items-center justify-between pt-4">
+<div class="flex items-center space-x-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-sm font-medium">Your IP and Location are logged for verification</span>
+</div>
+<button class="px-10 py-4 bg-primary text-white rounded-xl font-extrabold text-lg flex items-center space-x-3 shadow-xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all">
+<span>Submit Secure Report</span>
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</section>
+<!-- Right Column: Guidelines & Tips -->
+<aside class="col-span-4 space-y-6">
+<!-- Reporting Guidelines -->
+<div class="bg-surface-container-low rounded-3xl p-6 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-6 opacity-10">
+<span class="material-symbols-outlined text-6xl" data-icon="fact_check">fact_check</span>
+</div>
+<h3 class="text-lg font-bold mb-4 flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<span>Reporting Guidelines</span>
+</h3>
+<ul class="space-y-4">
+<li class="flex space-x-3">
+<span class="text-primary font-bold">01.</span>
+<p class="text-sm font-medium text-on-surface-variant leading-relaxed">Be specific about the location, including landmarks or station names.</p>
+</li>
+<li class="flex space-x-3">
+<span class="text-primary font-bold">02.</span>
+<p class="text-sm font-medium text-on-surface-variant leading-relaxed">Describe individuals neutrally and focus on observable behaviors.</p>
+</li>
+<li class="flex space-x-3">
+<span class="text-primary font-bold">03.</span>
+<p class="text-sm font-medium text-on-surface-variant leading-relaxed">Only upload media if it was taken safely without escalating the situation.</p>
+</li>
+</ul>
+</div>
+<!-- Safety Tips Section (Bento Card style) -->
+<div class="bg-primary text-white rounded-3xl p-8 relative overflow-hidden group">
+<!-- Subtle Gradient Texture -->
+<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary-container to-blue-800 opacity-90"></div>
+<div class="relative z-10">
+<h3 class="text-xl font-extrabold mb-6">Commuter Safety Tips</h3>
+<div class="space-y-6">
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</div>
+<div>
+<p class="font-bold text-sm">Stay Aware</p>
+<p class="text-xs text-blue-100 mt-1 leading-relaxed">Avoid using both headphones in high-traffic or isolated areas.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="share_location">share_location</span>
+</div>
+<div>
+<p class="font-bold text-sm">Share Your Path</p>
+<p class="text-xs text-blue-100 mt-1 leading-relaxed">Use the 'Watch Me' feature to share your live location with a trusted contact.</p>
+</div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="meeting_room">meeting_room</span>
+</div>
+<div>
+<p class="font-bold text-sm">Wait in Light</p>
+<p class="text-xs text-blue-100 mt-1 leading-relaxed">Stand near the 'Safe Zone' markers or in well-lit, CCTV-monitored areas.</p>
+</div>
+</div>
+</div>
+<button class="mt-8 w-full py-3 bg-white text-primary rounded-xl font-bold text-sm hover:bg-blue-50 transition-colors">
+                            Explore Full Safety Guide
+                        </button>
+</div>
+</div>
+<!-- Live Status Card -->
+<div class="bg-secondary-container rounded-3xl p-6 border-none">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold text-on-secondary-container uppercase tracking-widest">Active Safety Pulse</span>
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="analytics">analytics</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between items-end">
+<p class="text-2xl font-black text-on-secondary-container">12</p>
+<p class="text-[10px] font-bold text-on-secondary-container/70 pb-1">INCIDENTS NEARBY TODAY</p>
+</div>
+<div class="h-2 w-full bg-white/30 rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-1/3"></div>
+</div>
+<p class="text-xs font-medium text-on-secondary-container leading-relaxed">The area is currently rated <span class="font-bold underline">Moderately Safe</span>. Patrol frequency has been increased.</p>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</body></html>

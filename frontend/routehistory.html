@@ -1,0 +1,298 @@
+//Route history
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Route History - SafeRoute AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-tertiary": "#FFFFFF", tertiary: "#B81D17", "on-tertiary-fixed": "#410001", "primary-fixed-dim": "#ADC7FF", "on-primary": "#FFFFFF", "inverse-surface": "#2E3132", "surface-container-highest": "#E1E3E4", primary: "#005BBF", "tertiary-fixed": "#FFDAD5", "surface-container-low": "#F3F4F5", "secondary-fixed-dim": "#6DDD81", "on-error": "#FFFFFF", "primary-container": "#1A73E8", outline: "#727785", "on-tertiary-fixed-variant": "#930004", "secondary-container": "#86F898", "primary-fixed": "#D8E2FF", "on-tertiary-container": "#FFFFFF", "on-error-container": "#93000A", secondary: "#006E2C", "inverse-primary": "#ADC7FF", error: "#BA1A1A", "inverse-on-surface": "#F0F1F2", "surface-container-high": "#E7E8E9", "on-primary-fixed-variant": "#004493", "error-container": "#FFDAD6", "secondary-fixed": "#89FA9B", "on-surface-variant": "#414754", "on-primary-container": "#FFFFFF", "on-background": "#191C1D", "on-secondary-fixed": "#002108", "surface-bright": "#F8F9FA", background: "#F8F9FA", "surface-container": "#EDEEEF", "on-secondary-fixed-variant": "#005320", "on-secondary": "#FFFFFF", "surface-tint": "#005BC0", "outline-variant": "#C1C6D6", "tertiary-fixed-dim": "#FFB4A9", "surface-container-lowest": "#FFFFFF", "on-primary-fixed": "#001A41", "surface-variant": "#E1E3E4", "on-surface": "#191C1D", "surface-dim": "#D9DADB", "on-secondary-container": "#00722F", surface: "#F8F9FA", "tertiary-container": "#DC392C"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, fontFamily: {headline: ["Manrope"], body: ["Inter"], label: ["Inter"], display: "Manrope"}}}};</script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar Predicted Component -->
+<aside class="h-screen w-72 flex flex-col fixed left-0 top-0 bg-[#f3f4f5] dark:bg-slate-900 p-4 gap-2 z-50">
+<div class="mb-8 px-2">
+<h1 class="text-xl font-bold text-[#1A73E8] dark:text-blue-400 font-['Manrope'] tracking-tight">Guardian Admin</h1>
+<p class="text-xs text-slate-500 font-medium">Vigilant Sanctuary</p>
+</div>
+<nav class="flex flex-col gap-2 flex-grow">
+<!-- Dashboard -->
+
+<a  href="dash.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a  href="heatmap.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+<span>Map Explorer</span>
+</a>
+<!-- Route History (ACTIVE) -->
+ <a  href="routehistory.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide hover:scale-110 active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined" data-icon="history" style="font-variation-settings: 'FILL' 1;">history</span>
+<span>Route History </span>
+</a>
+
+<a  href="sharedroutes.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span>Shared Routes Management</span>
+</a>
+<a  href="compareroutes.html" class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>Route Comparision</span>
+</a>
+
+
+
+<!-- Settings -->
+
+</nav>
+<button class="mt-auto bg-tertiary text-on-tertiary font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-tertiary/20 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
+            Emergency SOS
+        </button>
+</aside>
+<!-- TopNavBar Predicted Component -->
+<header class="fixed top-0 right-0 w-[calc(100%-18rem)] h-16 bg-[#f8f9fa]/80 backdrop-blur-xl z-40 flex justify-between items-center px-8">
+<div class="flex items-center gap-8 flex-grow">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="w-full bg-surface-container-highest border-none rounded-full py-2 pl-10 pr-4 focus:ring-2 ring-primary/20 text-sm font-['Inter']" placeholder="Search destinations..." type="text"/>
+</div>
+<nav class="flex items-center gap-6">
+<a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-all" href="#">Live Status</a>
+<a class="text-[#1A73E8] border-b-2 border-[#1A73E8] pb-1 text-sm font-medium" href="#">Incidents</a>
+<a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-all" href="#">Reports</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-100 rounded-full transition-all">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden ml-2 ring-2 ring-primary-fixed">
+<img class="h-full w-full object-cover" data-alt="professional portrait of a middle-aged male security administrator with a confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlWeCAyVyGkAbUOYYS_xR4xHitiMJKkYis2dyIT7b8oD9ySDgz2piMIgkMT2u3nYvD7I-UWmf4-ozvYAYV1267pK7h5KaHLjFKsbx6KZDGxQnly4YB5UoZ6SgfXzpnMwQz6naTDMqugh7DixZhB8jPxZtC7MfhETWtLLifbGwSbshPc4MTpiqOVx2JQgZSE7h8tDLz8ag3iTf2e5VupnjSmxMyQptiWpcW_2tQFrizOkoLcRYLQ9D-N_mRrNKmRUwBBdg4qpqrFwU"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-72 pt-24 px-8 pb-12 min-h-screen">
+<div class="grid grid-cols-12 gap-8">
+<!-- Left: Route List and Filters -->
+<div class="col-span-8 flex flex-col gap-6">
+<!-- Page Header & Filters -->
+<div class="flex flex-col gap-6">
+<div class="flex justify-between items-end">
+<div>
+<h2 class="text-3xl font-extrabold tracking-tight text-on-surface headline">Route History</h2>
+<p class="text-on-surface-variant font-body mt-1">Review and analyze your previous vigilant navigations.</p>
+</div>
+</div>
+<!-- Filters Bento-ish Bar -->
+<div class="flex items-center gap-3 overflow-x-auto pb-2">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-xs font-semibold flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+                            Most Recent
+                        </button>
+<button class="bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high px-4 py-2 rounded-full text-xs font-semibold transition-colors flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+                            Highest Safety Score
+                        </button>
+<button class="bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high px-4 py-2 rounded-full text-xs font-semibold transition-colors flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                            Duration
+                        </button>
+</div>
+</div>
+<!-- History List -->
+<div class="flex flex-col gap-4">
+<!-- Route Item 1 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl flex gap-6 items-center hover:shadow-lg transition-all group cursor-pointer border-none">
+<div class="w-40 h-28 rounded-xl overflow-hidden shrink-0 bg-surface-container-low relative">
+<img class="h-full w-full object-cover" data-alt="bird's eye view map of an urban city center with a green highlighted navigation path through safe zones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhfuFaXcFbUEtURzgpxpezqhPMxV6PeIxCYAFHFnwWQeOTfwihi6gg_7Ep_3U01U1OwHBTksHtTJYFSRErbWe-WQ3qEZfXHchlVq_h1OYeZh412fm6_zEgupy-cLkoRFeDn2yol9DWr0NyPu_Gw8hrO2jOAhvgsGwlkdUOms8BMJ3y6tzNFDjWB6nuNtnpWLC0VGqOXz88hFZTgOj5NTf3pAyhm_blBUd3yXTDSO9cB8WiJ4ngXsKsjFCdchRW7IC_mjTti2MN0Fw"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-grow grid grid-cols-2 gap-y-2">
+<div class="col-span-2 flex justify-between items-start">
+<h3 class="font-headline font-bold text-lg">Central Hub to North Plaza</h3>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">Safe Route</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">calendar_month</span>
+                                Oct 24, 2023
+                            </div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">distance</span>
+                                4.2 miles
+                            </div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">timer</span>
+                                24 mins
+                            </div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">location_on</span>
+                                2 Stopovers
+                            </div>
+</div>
+<div class="shrink-0 flex flex-col items-center justify-center bg-surface-container-low rounded-xl px-6 py-4">
+<span class="text-xs font-bold text-on-surface-variant tracking-wider uppercase mb-1">Score</span>
+<span class="text-3xl font-extrabold text-secondary">98</span>
+</div>
+</div>
+<!-- Route Item 2 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl flex gap-6 items-center hover:shadow-lg transition-all group cursor-pointer border-none">
+<div class="w-40 h-28 rounded-xl overflow-hidden shrink-0 bg-surface-container-low relative">
+<img class="h-full w-full object-cover" data-alt="top-down street view with high architectural density and a clear route line marked in soft blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgdWiMKihdFwVz5uxrQboRYfIT4HSUqKmRxAqWhMnFnRDvuh35lPN_859m8U82_V-_C0noKQYsDn2ZrPy3qAT3Ym4LpygET5CjMBgI0XWWG7K-M63N7lDCBQU3idvztxLy6uOiSrZMVzfWUOgfsRXN7ZDGEgk1KaARdAcnpvXjNAjuvogh71vTwY-tKs9FcUWiATHWqjr13hJnv6kaEdxJkhSrNo34KFS_8bwRxpW9282V_kleBRpvYilNbcKU4vSIks22oEbFMbw"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-grow grid grid-cols-2 gap-y-2">
+<div class="col-span-2 flex justify-between items-start">
+<h3 class="font-headline font-bold text-lg">East Marina to Tech District</h3>
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">Monitored</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">calendar_month</span>
+                                Oct 22, 2023
+                            </div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">distance</span>
+                                12.8 miles
+                            </div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">timer</span>
+                                45 mins
+                            </div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">location_on</span>
+                                Direct Path
+                            </div>
+</div>
+<div class="shrink-0 flex flex-col items-center justify-center bg-surface-container-low rounded-xl px-6 py-4">
+<span class="text-xs font-bold text-on-surface-variant tracking-wider uppercase mb-1">Score</span>
+<span class="text-3xl font-extrabold text-primary">82</span>
+</div>
+</div>
+<!-- Route Item 3 -->
+<div class="bg-surface-container-lowest p-5 rounded-2xl flex gap-6 items-center hover:shadow-lg transition-all group cursor-pointer border-none">
+<div class="w-40 h-28 rounded-xl overflow-hidden shrink-0 bg-surface-container-low relative">
+<img class="h-full w-full object-cover" data-alt="night time urban layout with glowing street lights and a highlighted detour path around a caution zone" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZIbtF5ncsqzwZy3mxjkl7t37-SmkMqUZKry8stqeyTU_7M0GW9RK-gU9COCuIEGOrzau3hUgriizZH7pZ9e6vmga1_KOJbW3LIFdLOTi-qjbjtM6RGwNT8MLxcX_6rjntJSnSSWKVCVYntjIvma6dbkkVQo-SSUq6uzcifO_o26T8-pnpEYJeWwfWdo-SCRglR-9ixHdKdUzkWhpLVip-XDZNEoeC1zzBTjocEdpcP2xrPjibo13eqd8JrJyzelfS5MfnXXe9fNY"/>
+<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+</div>
+<div class="flex-grow grid grid-cols-2 gap-y-2">
+<div class="col-span-2 flex justify-between items-start">
+<h3 class="font-headline font-bold text-lg">Sunset Heights to Riverside</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">Detour Active</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">calendar_month</span>
+                                Oct 21, 2023
+                            </div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">distance</span>
+                                6.1 miles
+                            </div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">timer</span>
+                                32 mins
+                            </div>
+<div class="flex items-center gap-2 text-on-surface-variant text-sm">
+<span class="material-symbols-outlined text-lg">warning</span>
+                                1 Incident Logged
+                            </div>
+</div>
+<div class="shrink-0 flex flex-col items-center justify-center bg-surface-container-low rounded-xl px-6 py-4">
+<span class="text-xs font-bold text-on-surface-variant tracking-wider uppercase mb-1">Score</span>
+<span class="text-3xl font-extrabold text-tertiary">64</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Journey Insights Sidebar -->
+<div class="col-span-4 flex flex-col gap-6">
+<!-- Insights Card -->
+<div class="bg-surface-container-low rounded-3xl p-8 flex flex-col gap-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 rounded-full -mr-16 -mt-16"></div>
+<h3 class="text-xl font-extrabold font-headline">Journey Insights</h3>
+<div class="flex flex-col gap-6">
+<!-- Safe Miles -->
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 bg-secondary-container flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">speed</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant tracking-wider uppercase">Safe Miles</p>
+<h4 class="text-2xl font-extrabold text-on-surface">1,428.5</h4>
+</div>
+</div>
+<!-- Verified Reports -->
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 bg-primary-fixed flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">fact_check</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant tracking-wider uppercase">Reports Shared</p>
+<h4 class="text-2xl font-extrabold text-on-surface">42</h4>
+</div>
+</div>
+<!-- Safe Zone Streak -->
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 bg-secondary-container flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<p class="text-xs font-bold text-on-surface-variant tracking-wider uppercase">Zone Streak</p>
+<h4 class="text-2xl font-extrabold text-on-surface">12 Days</h4>
+</div>
+</div>
+</div>
+<!-- Signature Texture/Graphic -->
+<div class="mt-4 pt-6 border-t border-outline-variant/20">
+<p class="text-sm font-body text-on-surface-variant leading-relaxed">
+                            Your vigilance contributes to the safety of <span class="font-bold text-primary">8,400+</span> other community members.
+                        </p>
+<div class="mt-4 bg-gradient-to-r from-primary to-primary-container h-2 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full w-3/4 rounded-full"></div>
+</div>
+<div class="flex justify-between mt-2 text-[10px] font-bold text-on-surface-variant uppercase tracking-widest">
+<span>Guardian Rank</span>
+<span>Level 14</span>
+</div>
+</div>
+</div>
+<!-- Proximity Pulse Card -->
+<div class="glass-panel rounded-3xl p-6 border-none shadow-sm relative overflow-hidden">
+<div class="flex items-center gap-4 mb-4">
+<div class="relative">
+<div class="absolute inset-0 bg-secondary rounded-full animate-ping opacity-20"></div>
+<div class="w-10 h-10 bg-secondary text-on-secondary flex items-center justify-center rounded-full relative z-10">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+</div>
+<h4 class="font-headline font-bold">Vigilance Summary</h4>
+</div>
+<p class="text-sm text-on-surface-variant font-body">
+                        No critical incidents reported in your frequent routes over the last 72 hours. Your current pathing strategy is optimal.
+                    </p>
+<button class="mt-4 text-primary font-bold text-sm flex items-center gap-2 hover:translate-x-1 transition-transform">
+                        Full Security Analysis <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

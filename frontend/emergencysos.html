@@ -1,0 +1,230 @@
+//Emergency SOS
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Emergency SOS | SafeRoute AI</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="emergencysos.css" />
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-container": "#EDEEEF", "outline-variant": "#C1C6D6", "inverse-primary": "#ADC7FF", "tertiary-fixed-dim": "#FFB4A9", "inverse-surface": "#2E3132", "on-tertiary-container": "#FFFFFF", "on-error": "#FFFFFF", "primary-fixed-dim": "#ADC7FF", outline: "#727785", "on-surface": "#191C1D", error: "#BA1A1A", "on-primary-fixed-variant": "#004493", "surface-container-low": "#F3F4F5", "on-secondary": "#FFFFFF", "on-tertiary": "#FFFFFF", "surface-container-lowest": "#FFFFFF", "surface-tint": "#005BC0", primary: "#005BBF", "surface-container-high": "#E7E8E9", "on-secondary-container": "#00722F", "on-tertiary-fixed-variant": "#930004", "on-background": "#191C1D", tertiary: "#B81D17", "on-secondary-fixed-variant": "#005320", background: "#F8F9FA", "on-surface-variant": "#414754", "surface-variant": "#E1E3E4", "surface-bright": "#F8F9FA", "tertiary-container": "#DC392C", secondary: "#006E2C", "error-container": "#FFDAD6", "on-tertiary-fixed": "#410001", "on-error-container": "#93000A", "inverse-on-surface": "#F0F1F2", "secondary-fixed": "#89FA9B", "surface-dim": "#D9DADB", surface: "#F8F9FA", "on-primary": "#FFFFFF", "surface-container-highest": "#E1E3E4", "on-primary-fixed": "#001A41", "tertiary-fixed": "#FFDAD5", "on-secondary-fixed": "#002108", "secondary-fixed-dim": "#6DDD81", "on-primary-container": "#FFFFFF", "secondary-container": "#86F898", "primary-fixed": "#D8E2FF", "primary-container": "#1A73E8"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, fontFamily: {headline: ["Manrope"], body: ["Inter"], label: ["Inter"], display: "Manrope"}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed overflow-hidden">
+<!-- Global Layout Shell -->
+<div class="flex h-screen overflow-hidden">
+<!-- Side Navigation - From Shared Components JSON -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-900 flex-col py-6 space-y-2 z-50">
+<div class="px-6 mb-8">
+<div class="text-lg font-bold text-slate-900 dark:text-slate-100 font-headline tracking-tight">Guardian Interface</div>
+<div class="text-xs text-slate-500 uppercase tracking-widest font-semibold mt-1">Vigilant Sanctuary</div>
+</div>
+<nav class="flex-1 px-3 space-y-1">
+
+<div class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+<a  href="dash.html" >
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+</div>
+ 
+<div class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+<a href="analytics.html">
+<span class="material-symbols-outlined">analytics</span>
+<span>Safety Analytics</span>
+</div>
+<div class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+    <a href="safetymetrics.html">
+<span class="material-symbols-outlined">warning</span>
+<span>Safety Metrics</span>
+</a>
+</div>
+
+<div  class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+    <a href="safetyinsights.html">
+<span class="material-symbols-outlined">map</span>
+<span>safety insights</span>
+</a>
+</div>
+<div  class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+    <a href="emergencysos.html">
+<span class="material-symbols-outlined">description</span>
+<span>Emergency trigerred</span>
+</a>
+
+
+</nav>
+<div class="px-6 mt-auto">
+    <a href="reportincident.html">
+<button class="w-full py-3 px-4 bg-tertiary text-on-tertiary-container font-bold rounded-xl active:scale-95 transform transition-all shadow-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">report</span>
+                    Report Incident
+                </button>
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-64 relative min-h-screen">
+<!-- Background Map Layer (Asymmetric Design) -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-surface-container-low grayscale opacity-40">
+<img class="w-full h-full object-cover" data-alt="Monochrome satellite map view of an urban city center with glowing route lines and safety markers in dark navy and grey." data-location="London" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsDCCgpz_fOvp0ixhoYr0Gnb39cMovEKeAR5QANQ0fIaSFUrND4lihNzt-maN4GqZn8dqIXjomo-DMiM4aOw2GgzEBt5upSX9oKzXMElrGaCdXYbTM9Q0xBycgvkmou-y4rimwUtCodiwkv3HgSg60i0d1LxILoWqG75JlSor9Hxd52m0Ouu0nhSo3mrD-LOZAzIO4Ff9GR7uqON4iw1tRdVNJ0Bu6rrOBRtm1xGo2Ibb4IHA1UilvaLkSWCjSwUlcm_lS0d7eyQk"/>
+</div>
+<!-- SOS Pulse Overlay -->
+<div class="absolute inset-0 bg-gradient-to-t from-error/10 via-transparent to-transparent"></div>
+</div>
+<!-- Emergency Dashboard Overlay -->
+<div class="relative z-10 h-full flex flex-col p-6 lg:p-12">
+<!-- Top AppBar (Internal to Canvas) -->
+<div class="flex justify-between items-start mb-8">
+<div class="space-y-1">
+<div class="flex items-center gap-3">
+<span class="flex h-3 w-3 rounded-full bg-tertiary"></span>
+<h1 class="text-4xl font-headline font-extrabold text-on-surface tracking-tighter">Emergency Triggered</h1>
+</div>
+<p class="text-on-surface-variant font-medium opacity-80 max-w-md">The system has initiated high-urgency protocols. Live streaming and emergency services are on standby.</p>
+</div>
+<div class="flex gap-4">
+<div class="glass-panel px-6 py-3 rounded-xl shadow-sm flex items-center gap-4">
+<div class="text-right">
+<p class="text-[10px] font-label font-bold uppercase tracking-wider text-on-surface-variant">Silent Mode</p>
+<p class="text-sm font-headline font-bold text-secondary">Active</p>
+</div>
+<button class="w-12 h-6 bg-secondary rounded-full relative">
+<span class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 flex-1">
+<!-- Primary SOS Controller -->
+<div class="lg:col-span-8 flex flex-col items-center justify-center glass-panel rounded-xl shadow-sm border-0 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-error/5 to-transparent pointer-events-none"></div>
+<!-- SOS Button Heartbeat -->
+<div class="relative flex items-center justify-center group">
+<!-- Animated outer ring (Visual only) -->
+<div class="absolute w-[320px] h-[320px] rounded-full border-2 border-tertiary opacity-20 scale-110"></div>
+<div class="absolute w-[400px] h-[400px] rounded-full border border-tertiary opacity-10"></div>
+<button class="relative w-64 h-64 rounded-full bg-tertiary text-on-tertiary-container shadow-[0_0_60px_-15px_rgba(184,29,23,0.6)] flex flex-col items-center justify-center transition-transform active:scale-90 duration-300">
+<span class="material-symbols-outlined text-7xl mb-2" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
+<span class="text-3xl font-headline font-extrabold tracking-widest uppercase">SOS</span>
+<span class="text-xs font-label font-bold opacity-80 mt-2 uppercase tracking-widest">Hold to Cancel</span>
+</button>
+</div>
+<div class="mt-12 flex gap-8">
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mic</span>
+</div>
+<span class="text-[10px] font-label font-bold text-on-surface-variant uppercase tracking-widest">Recording</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<span class="text-[10px] font-label font-bold text-on-surface-variant uppercase tracking-widest">Live GPS</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+</div>
+<span class="text-[10px] font-label font-bold text-on-surface-variant uppercase tracking-widest">911 Dialed</span>
+</div>
+</div>
+</div>
+<!-- Side Information Stack -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Buddies Nearby Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col h-1/2">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-headline font-bold text-on-surface">3 Buddies Nearby</h3>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded-md uppercase tracking-wider">Intercepting</span>
+</div>
+<div class="space-y-4 overflow-y-auto pr-2">
+<div class="flex items-center gap-4 p-3 bg-surface-container-low rounded-lg">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a young male volunteer with a warm smile and kind eyes in an outdoor setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1yL5yD5vpGbB08-dSzFga7Xu4EIbShKwo_eGRv6tlepO-9RUUSF0Fp9toYjSAbNXH2mjU8qY1KSSFGU7bmjKYNlBLePVfm6bV2bTA5HzNuZCPRdtbpOOQtNwUY6AaDRBsfBm1kxUtgqrROYWfMszIfpBgMWVDZsRJpkrS7WAZU_TUUT0wV2m1gHRJ0o0iDdfSHW86egWwb0Bkkg22-W9ZFqUnGHGdNee9d6hxSB51lxwYNVEyjK5tFOhgs1ZgXARIBE4TTltECpk"/>
+<div>
+<p class="font-headline font-bold text-sm">Marcus Chen</p>
+<p class="text-xs text-on-surface-variant opacity-70">2 mins away • Guard Rank</p>
+</div>
+<span class="ml-auto material-symbols-outlined text-secondary text-sm">share_location</span>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface-container-low rounded-lg">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a professional woman in her 30s looking focused and helpful against a soft city background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeSdmBCX2EK6QBRjW4DCtxDpUg3ca1hmmehAtYrgbyU944IMggfhHV_yDX7UMsWk4k7GmTjdjNAeor8uZCL7rIsHraIpbxvuMeio60qEGdMyQDTJM063UB887oqVmzdbL8fK1FWWFowuMMuegMrvj6xZVCdJQky9iWyAOamJyiZy_1YHj_Zff1nIfWk94GBOfAMfJfESgPu1QUxSR2jUg3H2hq9YO7bhZJRSuchZixY9W6ntWluFySVLnZr8KIZauY9OygVy553-E"/>
+<div>
+<p class="font-headline font-bold text-sm">Sarah Jenkins</p>
+<p class="text-xs text-on-surface-variant opacity-70">4 mins away • Mentor Rank</p>
+</div>
+<span class="ml-auto material-symbols-outlined text-secondary text-sm">share_location</span>
+</div>
+<div class="flex items-center gap-4 p-3 bg-surface-container-low rounded-lg">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a reliable looking young man with a slight smile and confident expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_z1uxObR_IaScYAHOZwOomlZpjKG8o7S7CDEYwNoZjgpD5kohUZwYufIUQi1EmD-nFkpqkNx_6HzCRWIdNKv0_-k5MIINL7_gvV2nY6p6fD8ZJiB5-OlGXxRaVFGuP6WIOHY1omTPlrFv3tT_uMIWI0h5xvkUm7N53WQrdBgyRDriI53X7gp3ZbHpGI4g_Ja-kbCXQBHc5Vy9Bh8A6LnzYJoX0bC9AGe2RFAWZaJLeOj0CltjL7tmZnW4DQx0h_-BluLEl-W54KI"/>
+<div>
+<p class="font-headline font-bold text-sm">David Miller</p>
+<p class="text-xs text-on-surface-variant opacity-70">5 mins away • Guardian</p>
+</div>
+<span class="ml-auto material-symbols-outlined text-secondary text-sm">share_location</span>
+</div>
+</div>
+</div>
+<!-- Live Action Log -->
+<div class="glass-panel p-6 rounded-xl shadow-sm flex flex-col flex-1 border border-outline-variant/10">
+<h3 class="text-sm font-headline font-bold text-on-surface-variant uppercase tracking-widest mb-4">System Protocols</h3>
+<div class="space-y-4">
+<div class="flex gap-4">
+<span class="text-[10px] font-label font-bold text-tertiary-container mt-1">12:04</span>
+<p class="text-sm font-body text-on-surface">Emergency beacon broadcasted to 15 nearby users.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-[10px] font-label font-bold text-tertiary-container mt-1">12:04</span>
+<p class="text-sm font-body text-on-surface">Cloud recording initiated. Bio-metrics detected stress increase.</p>
+</div>
+<div class="flex gap-4">
+<span class="text-[10px] font-label font-bold text-tertiary-container mt-1">12:05</span>
+<p class="text-sm font-body text-on-surface font-semibold text-secondary">Police Dispatch Unit #442 acknowledged.</p>
+</div>
+</div>
+<div class="mt-auto pt-6">
+<button class="w-full py-4 bg-surface-container-highest text-on-surface-variant font-bold rounded-xl transition-all hover:bg-outline-variant/20 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">cancel</span>
+                                    False Alarm
+                                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Status Bar -->
+<div class="mt-8 flex flex-wrap items-center justify-between gap-6">
+<div class="flex items-center gap-6">
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-background bg-slate-200"></div>
+<div class="w-8 h-8 rounded-full border-2 border-background bg-slate-300"></div>
+<div class="w-8 h-8 rounded-full border-2 border-background bg-slate-400"></div>
+<div class="w-8 h-8 rounded-full border-2 border-background bg-primary flex items-center justify-center text-[10px] font-bold text-white">+12</div>
+</div>
+<p class="text-xs font-label font-medium text-on-surface-variant">Trusted contacts notified and tracking your location in real-time.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-1 w-48 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-2/3"></div>
+</div>
+<span class="text-[10px] font-label font-bold text-tertiary uppercase">Signal Strength: Critical</span>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script src="emergencysos.js"></script>
+</body></html>

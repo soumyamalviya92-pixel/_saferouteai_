@@ -1,0 +1,249 @@
+//Safety Metrices
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SafeRoute AI - Safety Metrics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .radial-progress {
+            transform: rotate(-90deg);
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3, .headline {
+            font-family: 'Manrope', sans-serif;
+        }
+    </style>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-error-container": "#93000A", "secondary-fixed": "#89FA9B", "tertiary-fixed": "#FFDAD5", background: "#F8F9FA", "primary-fixed-dim": "#ADC7FF", "primary-container": "#1A73E8", secondary: "#006E2C", "on-surface": "#191C1D", "surface-container-high": "#E7E8E9", "on-tertiary-fixed-variant": "#930004", "on-secondary-fixed": "#002108", "inverse-surface": "#2E3132", "on-secondary-container": "#00722F", "surface-dim": "#D9DADB", "on-background": "#191C1D", "inverse-on-surface": "#F0F1F2", "surface-tint": "#005BC0", primary: "#005BBF", error: "#BA1A1A", "on-error": "#FFFFFF", "surface-container": "#EDEEEF", "on-surface-variant": "#414754", "on-tertiary": "#FFFFFF", "error-container": "#FFDAD6", "on-secondary": "#FFFFFF", "surface-container-low": "#F3F4F5", "surface-variant": "#E1E3E4", tertiary: "#B81D17", "surface-container-lowest": "#FFFFFF", "tertiary-container": "#DC392C", "secondary-container": "#86F898", "on-tertiary-fixed": "#410001", "on-primary-fixed": "#001A41", "on-tertiary-container": "#FFFFFF", "tertiary-fixed-dim": "#FFB4A9", "on-secondary-fixed-variant": "#005320", surface: "#F8F9FA", "on-primary": "#FFFFFF", "surface-container-highest": "#E1E3E4", "surface-bright": "#F8F9FA", outline: "#727785", "inverse-primary": "#ADC7FF", "outline-variant": "#C1C6D6", "primary-fixed": "#D8E2FF", "on-primary-container": "#FFFFFF", "secondary-fixed-dim": "#6DDD81", "on-primary-fixed-variant": "#004493"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, fontFamily: {headline: ["Manrope"], body: ["Inter"], label: ["Inter"], display: "Manrope"}}}};</script>
+</head>
+<body class="bg-slate-100 text-slate-900 overflow-hidden">
+
+<!-- Sidebar Navigation -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-white border-r border-slate-200 flex flex-col h-full p-4 z-50">
+<div class="text-xl font-bold text-primary mb-8 font-headline">Safety Metrics</div>
+<div class="mb-8">
+<div class="flex items-center gap-3 mb-1 px-4">
+<span class="text-xs font-headline font-bold text-slate-500 uppercase tracking-widest">The Guardian</span>
+</div>
+<div class="px-4 py-1 text-xs text-slate-400 font-medium">Vigilant Sanctuary Status</div>
+</div>
+<nav class="flex-1 space-y-1">
+
+    <div class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+<a  href="dash.html" >
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+</div>
+ 
+<div class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+<a href="analytics.html">
+<span class="material-symbols-outlined">analytics</span>
+<span>Safety Analytics</span>
+</div>
+<div class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+    <a href="safetymetrics.html">
+<span class="material-symbols-outlined">warning</span>
+<span>Safety Metrics</span>
+</a>
+</div>
+
+<div  class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+    <a href="safetyinsights.html">
+<span class="material-symbols-outlined">map</span>
+<span>safety insights</span>
+</a>
+</div>
+<div  class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+    <a href="emergencysos.html">
+<span class="material-symbols-outlined">description</span>
+<span>Emergency trigerred</span>
+</a>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<a class="flex items-center gap-3 text-slate-600 px-4 py-3 font-manrope font-semibold text-sm hover:bg-slate-50 transition-all hover:translate-x-1 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span>Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 relative h-screen w-[calc(100%-16rem)]">
+<!-- Top App Bar -->
+<header class="bg-white/80 backdrop-blur-xl flex justify-between items-center w-full px-6 py-3 sticky top-0 z-50 border-b border-slate-200">
+<div class="flex items-center gap-6">
+<div class="text-2xl font-bold tracking-tight text-primary font-headline">SafeRoute AI</div>
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 material-symbols-outlined text-slate-400">search</span>
+<input class="bg-slate-100 border-none rounded-full pl-10 pr-4 py-2 text-sm w-80 focus:ring-2 focus:ring-primary" placeholder="Search safe routes..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-slate-600 hover:bg-slate-100 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full text-slate-600 hover:bg-slate-100 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Light Mode Map Background -->
+<div class="absolute inset-0 z-0 bg-slate-200">
+<img class="w-full h-full object-cover grayscale opacity-40 mix-blend-multiply" data-alt="A clean light detailed city map with light gray streets and blue primary routes" data-location="New York City" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTdBSasQfvLliI7dEaW-cGLUp3WR9hs0tbJSE69UOhYHULDXCDCUk8OPE1ckiwRCNnEvLjQakP8LQnWhZc5O6dULGs1wM-pjBaLhSFaUB3OTMdyKzndOh4CtMQm8irmegA4_twW_xmwabC0dwz8YGrzO2YhL7qTnlAIHp7aiChdEAdmv80cbW7wIMRvdCTijtB8Z9ew7YedOZdgCnHNiQ4YzGcyFyqR0_iMfrvrJI1tatPx87AI4vIgBwSDZbD81C7QjX2U-E8Sg0"/>
+<!-- Decorative Map Overlays -->
+<div class="absolute top-20 left-20 w-48 h-48 bg-secondary-container/30 rounded-full blur-3xl animate-pulse"></div>
+<div class="absolute bottom-40 right-40 w-64 h-64 bg-primary-container/30 rounded-full blur-3xl"></div>
+</div>
+<!-- Floating Map Markers -->
+<div class="absolute inset-0 z-10 pointer-events-none">
+<div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 group">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-12 h-12 bg-secondary/20 rounded-full animate-ping"></div>
+<div class="relative w-6 h-6 bg-secondary rounded-full border-2 border-white flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[10px] text-white" data-icon="location_on" data-weight="fill" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+<div class="absolute top-8 bg-white px-3 py-1 rounded-full border border-slate-200 text-[10px] font-bold text-secondary shadow-md">YOU ARE HERE</div>
+</div>
+</div>
+</div>
+<!-- Safety Metrics Bottom Panel -->
+<section class="absolute bottom-0 left-0 right-0 z-40 px-8 pb-8 pointer-events-none">
+<div class="max-w-5xl mx-auto glass-panel rounded-t-[2.5rem] p-8 border-x border-t border-slate-200/50 pointer-events-auto transform translate-y-4 hover:translate-y-0 transition-transform duration-500 shadow-2xl">
+<!-- Panel Header -->
+<div class="flex items-end justify-between mb-10">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="verified_user" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-xs font-bold tracking-[0.2em] text-secondary uppercase font-headline">Guardian Status</span>
+</div>
+<h2 class="text-4xl font-extrabold font-headline tracking-tight text-slate-900">High Safety <span class="text-secondary">98/100</span></h2>
+<p class="text-slate-500 text-sm font-medium">Optimal conditions detected in your current radius.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-slate-100 hover:bg-slate-200 text-slate-800 px-6 py-3 rounded-xl font-bold text-sm transition-all border border-slate-200 active:scale-95">
+                        Route Analysis
+                    </button>
+<button class="bg-primary hover:bg-blue-700 text-white px-8 py-3 rounded-xl font-bold text-sm transition-all shadow-lg shadow-primary/20 active:scale-95">
+                        Start Secure Journey
+                    </button>
+</div>
+</div>
+<!-- Metrics Grid -->
+<div class="grid grid-cols-3 gap-8">
+<!-- Metric 1: Lighting -->
+<div class="flex items-center gap-6 p-6 rounded-3xl bg-white border border-slate-100 shadow-sm">
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="radial-progress w-full h-full" viewbox="0 0 100 100">
+<circle class="text-slate-100" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-yellow-500 transition-all duration-1000" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="12.56" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="material-symbols-outlined text-yellow-600 text-xl" data-icon="lightbulb">lightbulb</span>
+<span class="text-xs font-bold font-headline text-slate-900">95%</span>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold font-headline text-slate-900">Lighting</h3>
+<p class="text-xs text-slate-500 mt-1">Luminosity levels are at maximum across all nodes.</p>
+</div>
+</div>
+<!-- Metric 2: Crowd Density -->
+<div class="flex items-center gap-6 p-6 rounded-3xl bg-white border border-slate-100 shadow-sm">
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="radial-progress w-full h-full" viewbox="0 0 100 100">
+<circle class="text-slate-100" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-secondary transition-all duration-1000" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="37.68" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="group">group</span>
+<span class="text-xs font-bold font-headline text-slate-900">85%</span>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold font-headline text-slate-900">Crowd Density</h3>
+<p class="text-xs text-slate-500 mt-1">Optimal pedestrian flow. No congested zones detected.</p>
+</div>
+</div>
+<!-- Metric 3: Patrol Presence -->
+<div class="flex items-center gap-6 p-6 rounded-3xl bg-white border border-slate-100 shadow-sm">
+<div class="relative w-24 h-24 flex items-center justify-center">
+<svg class="radial-progress w-full h-full" viewbox="0 0 100 100">
+<circle class="text-slate-100" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary transition-all duration-1000" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.2" stroke-dashoffset="25.12" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="shield">shield</span>
+<span class="text-xs font-bold font-headline text-slate-900">90%</span>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold font-headline text-slate-900">Patrol Presence</h3>
+<p class="text-xs text-slate-500 mt-1">High vigilance. 4 Guardian units in your immediate area.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Side Overlays -->
+<div class="absolute top-24 right-8 z-30 space-y-4">
+<div class="glass-panel p-4 rounded-2xl border border-slate-200 w-64 shadow-xl">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest font-headline">Active Alerts</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</div>
+<div class="space-y-3">
+<div class="flex items-start gap-3">
+<div class="mt-1 w-8 h-8 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-900">Broadway Clear</p>
+<p class="text-[10px] text-slate-500">Main artery safety verified by AI.</p>
+</div>
+</div>
+<div class="flex items-start gap-3 opacity-70">
+<div class="mt-1 w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="info">info</span>
+</div>
+<div>
+<p class="text-xs font-bold text-slate-900">Patrol Shift Change</p>
+<p class="text-[10px] text-slate-500">Sector 4 rotation in 12 mins.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Weather Card -->
+<div class="glass-panel p-4 rounded-2xl border border-slate-200 w-64 flex items-center justify-between shadow-xl">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="cloud">cloud</span>
+<div>
+<p class="text-xs font-bold text-slate-900">64°F Clear</p>
+<p class="text-[10px] text-slate-500">Excellent Visibility</p>
+</div>
+</div>
+<span class="text-xs font-bold text-secondary">GOOD</span>
+</div>
+</div>
+</main>
+</body></html>

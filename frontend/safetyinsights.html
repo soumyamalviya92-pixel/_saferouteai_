@@ -1,0 +1,336 @@
+//Safety Insights
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Safety Insights - Guardian Drive</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-container": "#86F898", "primary-container": "#1A73E8", primary: "#005BBF", "surface-dim": "#D9DADB", "tertiary-fixed-dim": "#FFB4A9", "outline-variant": "#C1C6D6", "inverse-primary": "#ADC7FF", surface: "#F8F9FA", "on-secondary-container": "#00722F", "on-error-container": "#93000A", "on-surface": "#191C1D", "on-secondary": "#FFFFFF", "surface-container-highest": "#E1E3E4", "on-tertiary-fixed-variant": "#930004", "on-tertiary-fixed": "#410001", "on-secondary-fixed-variant": "#005320", "on-tertiary": "#FFFFFF", "inverse-surface": "#2E3132", secondary: "#006E2C", "secondary-fixed-dim": "#6DDD81", "on-primary-container": "#FFFFFF", "surface-container-lowest": "#FFFFFF", "surface-container": "#EDEEEF", "secondary-fixed": "#89FA9B", outline: "#727785", "surface-variant": "#E1E3E4", "on-error": "#FFFFFF", "primary-fixed": "#D8E2FF", "error-container": "#FFDAD6", error: "#BA1A1A", background: "#F8F9FA", "surface-container-high": "#E7E8E9", "on-tertiary-container": "#FFFFFF", "on-primary-fixed": "#001A41", tertiary: "#B81D17", "surface-tint": "#005BC0", "surface-bright": "#F8F9FA", "on-background": "#191C1D", "primary-fixed-dim": "#ADC7FF", "on-surface-variant": "#414754", "on-primary-fixed-variant": "#004493", "tertiary-fixed": "#FFDAD5", "on-primary": "#FFFFFF", "tertiary-container": "#DC392C", "surface-container-low": "#F3F4F5", "inverse-on-surface": "#F0F1F2", "on-secondary-fixed": "#002108"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, fontFamily: {headline: ["Manrope"], body: ["Inter"], label: ["Inter"], display: "Manrope"}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col p-4 z-40 h-screen w-64 bg-surface-container-low font-manrope text-sm font-semibold">
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined">security</span>
+</div>
+<div>
+<h2 class="text-lg font-bold text-gray-900 leading-tight">Safety insights</h2>
+<p class="text-[10px] uppercase tracking-widest text-primary font-bold">Vigilant Sanctuary</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+    <div class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+<a  href="dash.html" >
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+</div>
+ 
+<div class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+<a href="analytics.html">
+<span class="material-symbols-outlined">analytics</span>
+<span>Safety Analytics</span>
+</div>
+<div class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+    <a href="safetymetrics.html">
+<span class="material-symbols-outlined">warning</span>
+<span>Safety Metrics</span>
+</a>
+</div>
+<div  class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+    <a href="safetyinsights.html">
+<span class="material-symbols-outlined">map</span>
+<span>safety insights</span>
+</a>
+</div>
+
+<div  class="bg-white dark:bg-slate-800 text-blue-700 dark:text-blue-300 font-bold rounded-lg shadow-sm flex items-center gap-3 px-4 py-3 cursor-pointer active:opacity-80 transition-transform duration-200 hover:translate-x-1">
+    <a href="emergencysos.html">
+<span class="material-symbols-outlined">description</span>
+<span>Emergency trigerred</span>
+</a>
+</div>
+
+<br>
+<br>
+<br>
+
+<a class="flex items-center gap-3 px-4 py-2 text-gray-600 hover:bg-gray-200 rounded-lg transition-all" href="profile.html">
+<span class="material-symbols-outlined">person</span>
+<span>Account</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-error hover:bg-error-container/30 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 w-full backdrop-blur-md bg-opacity-80 bg-surface h-16 shadow-sm ml-64 w-[calc(100%-16rem)]">
+<div class="flex items-center gap-4">
+<h1 class="text-xl font-bold tracking-tight text-gray-900">Guardian Drive</h1>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-high border-none rounded-full text-sm focus:ring-2 focus:ring-primary w-64 transition-all" placeholder="Search analytics..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-gray-500 hover:bg-gray-100 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-gray-500 hover:bg-gray-100 rounded-full transition-colors active:scale-95 duration-150">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary-fixed ml-2">
+<img alt="User profile" data-alt="professional headshot of a mature fleet manager with a confident expression in a bright office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrwXpyVxkhcCT0wz80n1WAOdfc2k2Fs8q03bGaDjJ2TiRCYoPbCGELAQ0JdcVn4skmsXV5YPkbCxTyTo2Ny_Jg7enTxma7sYgEUl07tzdjvTpHQzz91ezKjzKdDVsoYW5LaKfaoCH8dbz4XT-iRbZbVHGfCL0OMA_JMk6CiVdKXgmVi5WqGMOmVWvE0SZd8-ovhOq7dLIsns4zWGwAL9dCrvVdXhzDeOhlAkgBl5ijiUNRpgEv8P11UtrLDmdFz0Sz6DeGcKJRESs"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 p-8 min-h-screen">
+<div class="max-w-6xl mx-auto">
+<!-- Hero Header Section -->
+<div class="mb-12 flex flex-col md:flex-row justify-between items-end gap-6">
+<div class="max-w-xl">
+<span class="text-primary font-bold tracking-widest text-xs uppercase mb-2 block">Performance Overview</span>
+<h2 class="text-4xl font-headline font-extrabold text-on-surface leading-tight">Safety Insights</h2>
+<p class="text-on-surface-variant mt-2 text-lg">Real-time analysis of driving patterns and proactive safety recommendations.</p>
+</div>
+<div class="flex gap-3">
+<div class="px-4 py-2 bg-secondary-container text-on-secondary-container rounded-lg font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                        Elite Fleet Status
+                    </div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Central Gauge Card (Main Focus) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-[2rem] p-10 flex flex-col items-center justify-center relative overflow-hidden">
+<!-- Atmospheric Background Texture -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
+<h3 class="text-on-surface-variant font-bold text-sm uppercase tracking-tighter mb-8">Overall Safety Score</h3>
+<!-- Circular Gauge -->
+<div class="relative w-72 h-72 flex items-center justify-center">
+<!-- SVG Gauge Background -->
+<svg class="absolute inset-0 w-full h-full -rotate-90">
+<circle class="text-surface-container-high" cx="144" cy="144" fill="transparent" r="130" stroke="currentColor" stroke-width="14"></circle>
+<circle class="text-primary" cx="144" cy="144" fill="transparent" r="130" stroke="currentColor" stroke-dasharray="816.8" stroke-dashoffset="65" stroke-linecap="round" stroke-width="14"></circle>
+</svg>
+<div class="text-center z-10">
+<div class="text-7xl font-headline font-extrabold text-on-surface">92</div>
+<div class="text-lg font-bold text-primary">Excellent</div>
+<div class="text-on-surface-variant text-sm mt-1">/ 100 points</div>
+</div>
+</div>
+<div class="mt-10 grid grid-cols-3 gap-12 w-full max-w-lg text-center">
+<div>
+<p class="text-2xl font-bold text-on-surface">240</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-wider">Miles Logged</p>
+</div>
+<div>
+<p class="text-2xl font-bold text-on-surface">0</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-wider">Critical Alerts</p>
+</div>
+<div>
+<p class="text-2xl font-bold text-on-surface">12</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-wider">Safe Zones</p>
+</div>
+</div>
+</div>
+<!-- Proximity Pulse / Map Highlight -->
+<div class="lg:col-span-4 bg-surface-container-highest rounded-[2rem] p-6 flex flex-col h-full relative overflow-hidden">
+<div class="h-full w-full rounded-2xl overflow-hidden relative">
+<img alt="Safety Map" class="w-full h-full object-cover grayscale opacity-50" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_rZSnnB4-QO0QPGOL-B1y-aQTqHUzO2Pz9dpwFLYuJEZc3lUlAzMjpO4_3X4lW3QN7efiMYmWUN1yoDLu2s-YWkSok-For7knFaaEnLzwLZp9y6tfIoBIwEtBP8jLwsdw-t1JpyZhVRT-l89v9ZgiFvVWktG4gCVIJ9XhMLq0Y4VrF4xWwSsBGNphL8IhMzvD0NHLYrypyqQlkjpCcElk45feNn3wLBk9pdRhYglHRmwxVkKzxU6HbD3NUNoO6HqZ8AOLvMyZg08"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-highest to-transparent"></div>
+<!-- Pulse Overlay -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center animate-pulse">
+<div class="w-8 h-8 bg-secondary rounded-full border-4 border-white"></div>
+</div>
+</div>
+</div>
+<div class="mt-4">
+<h4 class="font-bold text-lg">Current Safe Zone</h4>
+<p class="text-sm text-on-surface-variant">Optimal road conditions detected. Maintain current speed for efficiency.</p>
+</div>
+</div>
+<!-- Safety Breakdown Section -->
+<div class="lg:col-span-12 mt-4">
+<h3 class="text-2xl font-headline font-bold mb-6 px-2">Safety Breakdown</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Speeding Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border-b-4 border-secondary-fixed">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-container/30 text-secondary rounded-xl">
+<span class="material-symbols-outlined">speed</span>
+</div>
+<span class="text-secondary font-bold text-sm">Optimal</span>
+</div>
+<h4 class="font-bold text-lg mb-1">Speeding Incidents</h4>
+<p class="text-sm text-on-surface-variant mb-6">Low frequency of rapid acceleration detected over the last 48 hours.</p>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter text-on-surface-variant">
+<span>Compliance</span>
+<span>98%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[98%] rounded-full"></div>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded-xl text-sm border-l-4 border-primary">
+<span class="font-bold text-primary block text-xs uppercase mb-1">Suggestion</span>
+                                Maintain consistent speeds in residential zones.
+                            </div>
+</div>
+<!-- Harsh Braking Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border-b-4 border-primary-fixed">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-fixed text-primary rounded-xl">
+<span class="material-symbols-outlined">front_loader</span>
+</div>
+<span class="text-primary font-bold text-sm">Steady</span>
+</div>
+<h4 class="font-bold text-lg mb-1">Harsh Braking</h4>
+<p class="text-sm text-on-surface-variant mb-6">Smooth deceleration patterns observed on highway interchanges.</p>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter text-on-surface-variant">
+<span>Smoothness</span>
+<span>85%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[85%] rounded-full"></div>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded-xl text-sm border-l-4 border-primary">
+<span class="font-bold text-primary block text-xs uppercase mb-1">Suggestion</span>
+                                Increase following distance in wet conditions.
+                            </div>
+</div>
+<!-- Distracted Driving Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm border-b-4 border-tertiary-fixed">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary-fixed text-tertiary rounded-xl">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+<span class="text-tertiary font-bold text-sm">Good</span>
+</div>
+<h4 class="font-bold text-lg mb-1">Distracted Driving</h4>
+<p class="text-sm text-on-surface-variant mb-6">AI monitors show consistent eyes-on-road metrics during transit.</p>
+<div class="space-y-2 mb-6">
+<div class="flex justify-between text-xs font-bold uppercase tracking-tighter text-on-surface-variant">
+<span>Focus</span>
+<span>92%</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-tertiary w-[92%] rounded-full"></div>
+</div>
+</div>
+<div class="p-3 bg-surface-container-low rounded-xl text-sm border-l-4 border-primary">
+<span class="font-bold text-primary block text-xs uppercase mb-1">Suggestion</span>
+                                Utilize voice-activated commands for navigation.
+                            </div>
+</div>
+</div>
+</div>
+<!-- Recent Events Table (Glass Look) -->
+<div class="lg:col-span-12 mt-8 mb-12">
+<div class="glass-panel p-8 rounded-[2rem] border border-outline-variant/10">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-xl font-headline font-bold">SafeRoute Log</h3>
+<button class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                                View Full History
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="space-y-4">
+<!-- List Item 1 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl hover:bg-white transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container/20 text-secondary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div>
+<p class="font-bold">Trip Completion</p>
+<p class="text-xs text-on-surface-variant">Mission District • 12:40 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="text-right">
+<p class="font-bold">+15 pts</p>
+<p class="text-[10px] uppercase font-bold text-secondary">Bonus: Smooth Ride</p>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-2xl hover:bg-white transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary-fixed/30 text-primary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="font-bold">Safe Zone Entry</p>
+<p class="text-xs text-on-surface-variant">Market Street • 11:15 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="text-right">
+<p class="font-bold">Active</p>
+<p class="text-[10px] uppercase font-bold text-primary">Enhanced Monitoring</p>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</div>
+<!-- List Item 3 -->
+<div class="flex items-center justify-between p-4 bg-surface-container-lowest rounded-2xl hover:bg-white transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary-fixed/30 text-tertiary rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">priority_high</span>
+</div>
+<div>
+<p class="font-bold">Weather Warning</p>
+<p class="text-xs text-on-surface-variant">SOMA District • 09:30 AM</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="text-right">
+<p class="font-bold">Dismissed</p>
+<p class="text-[10px] uppercase font-bold text-tertiary">Visibility Caution</p>
+</div>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button (FAB) -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-tertiary rounded-full shadow-2xl flex items-center justify-center text-white z-50 hover:scale-110 active:scale-95 transition-all" style="box-shadow: 0 0 20px rgba(184, 29, 23, 0.4);">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">sos</span>
+</button>
+</body></html>

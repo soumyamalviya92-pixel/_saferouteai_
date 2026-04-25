@@ -1,0 +1,243 @@
+//active route navigation
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-dim": "#D9DADB", "on-tertiary": "#FFFFFF", "on-surface": "#191C1D", "secondary-fixed": "#89FA9B", "surface-variant": "#E1E3E4", "on-secondary": "#FFFFFF", "on-primary-container": "#FFFFFF", "primary-fixed": "#D8E2FF", surface: "#F8F9FA", "on-error-container": "#93000A", error: "#BA1A1A", "outline-variant": "#C1C6D6", "inverse-primary": "#ADC7FF", "surface-container-lowest": "#FFFFFF", "on-secondary-fixed": "#002108", "surface-container": "#EDEEEF", "inverse-on-surface": "#F0F1F2", "secondary-fixed-dim": "#6DDD81", background: "#F8F9FA", "surface-tint": "#005BC0", primary: "#005BBF", tertiary: "#B81D17", "tertiary-container": "#DC392C", secondary: "#006E2C", "on-secondary-container": "#00722F", "on-tertiary-fixed": "#410001", "tertiary-fixed-dim": "#FFB4A9", "surface-container-high": "#E7E8E9", "surface-container-highest": "#E1E3E4", "primary-container": "#1A73E8", "secondary-container": "#86F898", "on-primary-fixed": "#001A41", "error-container": "#FFDAD6", outline: "#727785", "on-tertiary-fixed-variant": "#930004", "inverse-surface": "#2E3132", "on-secondary-fixed-variant": "#005320", "tertiary-fixed": "#FFDAD5", "on-primary-fixed-variant": "#004493", "on-error": "#FFFFFF", "on-background": "#191C1D", "surface-bright": "#F8F9FA", "on-primary": "#FFFFFF", "surface-container-low": "#F3F4F5", "primary-fixed-dim": "#ADC7FF", "on-tertiary-container": "#FFFFFF", "on-surface-variant": "#414754"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, fontFamily: {headline: ["Manrope"], body: ["Inter"], label: ["Inter"], display: "Manrope"}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<div class="flex h-screen overflow-hidden">
+<!-- SideNavBar (Shared Component) -->
+<aside class="h-screen w-64 fixed left-0 top-0 flex flex-col bg-slate-50 dark:bg-slate-950 border-r border-slate-200/30 dark:border-slate-800/30 p-4 z-50">
+<div class="mb-8 px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<div>
+<h1 class="font-headline font-extrabold text-blue-700 dark:text-blue-500 text-lg leading-none">SafeRoute AI</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-500 font-bold mt-1">Vigilant Sanctuary</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:translate-x-1 transition-transform duration-200 font-['Inter'] text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                    Dashboard
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 font-bold rounded-lg font-['Inter'] text-sm tracking-wide" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+                    Map Explorer
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:translate-x-1 transition-transform duration-200 font-['Inter'] text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined">security</span>
+                    Safety Reports
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:translate-x-1 transition-transform duration-200 font-['Inter'] text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined">group</span>
+                    Trusted Contacts
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 hover:translate-x-1 transition-transform duration-200 font-['Inter'] text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined">insights</span>
+                    Analytics
+                </a>
+</nav>
+<div class="mt-auto space-y-1 pt-4 border-t border-slate-200/30">
+<button class="w-full bg-primary text-white py-3 rounded-xl font-bold flex items-center justify-center gap-2 mb-4 active:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">add_alert</span>
+                    Report Incident
+                </button>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">help</span>
+                    Help Center
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-900 font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">person</span>
+                    Account
+                </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 relative flex flex-col h-screen">
+<!-- TopNavBar (Shared Component) -->
+<header class="flex justify-between items-center px-6 w-full sticky top-0 z-40 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md h-16 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-surface-container-high rounded-full px-4 py-1.5 gap-2">
+<span class="material-symbols-outlined text-primary text-sm">my_location</span>
+<span class="text-on-surface font-medium text-sm">Route to: Union Station</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-200/50 rounded-full transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-8 w-8 rounded-full overflow-hidden border-2 border-primary/20">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="Close-up portrait of a friendly professional man in his 30s with a clean modern aesthetic and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVi3EiFt5Nk2IKkT-4-5FpTxR5okfmzPwrHAgmQMsrR9W5VNvFaFQJVOvt1oV7CjmvHG20MShwDB15Cv254JkIT3fTYWBIo_ekuHwkXHwhycjbcTCBpbcTXYbHXvXCtcQ1Rw6sWsCukV85TihsemQFxgcbwxVbrnNahbwzcgTvKefzIKCNdG5BuA-ZLdCQpZmDi0cWG1WWNOeRW3l3xugVPicX-H7CUIoNvn0mpuJCemI7YLMGDx50Cy4FjrEoXdyhE0BEWAPWfPw"/>
+</div>
+</div>
+</header>
+<!-- Map View Container -->
+<div class="flex-1 relative overflow-hidden bg-surface-container-low">
+<!-- Interactive Map Placeholder -->
+<div class="absolute inset-0 z-0">
+<img alt="Interactive urban map" class="w-full h-full object-cover opacity-60" data-alt="High-angle satellite view of a clean modern city grid with a neon blue highlighted route line glowing through streets" data-location="Chicago" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBa5TXLhtYBUw-ME0J4-odaInwmGCOV-20IN80Kuh1BR2sdOo3iPDXGx_4tf002AFby_MRme06jVbbY5vELHxonnEFCXJQHAGnhoN47X-K-grgd55yBhSBEWi06CkkWohNeL5qK-3QmcA40qPpMlre79Nr7aVoBgTsfxk4QRA1yI5OIfh7rwsZrw35j_eQtisFPsXYwlNK37YJOyJOfw2VaWyUEoXU58yYhPW721Fa640osGjlrCh7qmbvFf95VxrqJ27qpyOQ954"/>
+<!-- Safety Pulse Visualizers -->
+<div class="absolute top-1/2 left-1/3 w-32 h-32 bg-secondary/10 rounded-full border border-secondary/20 animate-pulse"></div>
+<div class="absolute top-1/4 left-1/2 w-48 h-48 bg-secondary/10 rounded-full border border-secondary/20 animate-pulse"></div>
+</div>
+<!-- Navigation HUD Overlay (Top Left) -->
+<div class="absolute top-6 left-6 z-10 w-80">
+<div class="bg-surface-container-lowest rounded-xl shadow-lg p-5 space-y-4">
+<div class="flex items-center justify-between">
+<h2 class="font-headline font-bold text-xl text-on-surface">Next Turn</h2>
+<span class="text-primary font-bold text-lg">250m</span>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl">turn_right</span>
+</div>
+<div>
+<p class="font-headline font-bold text-lg leading-tight">Turn right onto 5th Ave</p>
+<p class="text-on-surface-variant text-sm mt-1">Well-lit commercial zone</p>
+</div>
+</div>
+<div class="pt-4 border-t border-surface-container flex justify-between">
+<div class="text-center px-2">
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider">ETA</p>
+<p class="text-lg font-bold text-primary">12:44</p>
+</div>
+<div class="text-center px-2">
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider">Remaining</p>
+<p class="text-lg font-bold text-on-surface">8 min</p>
+</div>
+<div class="text-center px-2">
+<p class="text-xs font-label text-on-surface-variant uppercase tracking-wider">Safety</p>
+<p class="text-lg font-bold text-secondary">High</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-time Safety Panels (Asymmetric Grid) -->
+<div class="absolute bottom-6 right-6 z-10 w-[420px] grid grid-cols-2 gap-4">
+<!-- Lighting Metric -->
+<div class="glass-panel p-4 rounded-xl shadow-sm">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-amber-500" style="font-variation-settings: 'FILL' 1;">light_mode</span>
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Lighting</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-amber-400 w-[85%]"></div>
+</div>
+<p class="mt-2 text-sm font-semibold">Bright (850 Lumens)</p>
+</div>
+<!-- Crowd Level -->
+<div class="glass-panel p-4 rounded-xl shadow-sm">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-blue-500" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="text-xs font-bold uppercase tracking-wider text-on-surface-variant">Crowd</span>
+</div>
+<div class="h-2 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-blue-500 w-[40%]"></div>
+</div>
+<p class="mt-2 text-sm font-semibold">Moderate Density</p>
+</div>
+<!-- Main Navigation Controls -->
+<div class="col-span-2 glass-panel p-6 rounded-xl shadow-md space-y-4">
+<div class="flex items-center justify-between gap-4">
+<button class="flex-1 bg-tertiary text-white h-14 rounded-xl flex items-center justify-center gap-3 font-bold text-lg shadow-lg hover:brightness-110 active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
+                                SOS TRIGGER
+                            </button>
+<button class="px-6 h-14 border-2 border-primary text-primary font-bold rounded-xl hover:bg-primary/5 active:scale-[0.98] transition-all">
+                                Finish Navigation
+                            </button>
+</div>
+<div class="flex items-center justify-center gap-2 text-xs text-on-surface-variant font-medium">
+<span class="material-symbols-outlined text-sm">shield</span>
+                            Route monitored by AI Sentinel &amp; 3 trusted contacts
+                        </div>
+</div>
+</div>
+<!-- Floating Route Step Sidebar (Asymmetric Overlap) -->
+<div class="absolute top-0 right-0 h-full w-96 glass-panel border-l border-white/20 p-6 overflow-y-auto hidden xl:block">
+<h3 class="font-headline font-extrabold text-2xl mb-6">Live Itinerary</h3>
+<div class="space-y-8 relative">
+<!-- Connecting Line -->
+<div class="absolute left-6 top-8 bottom-8 w-1 bg-surface-container-highest"></div>
+<!-- Step 1: Completed -->
+<div class="relative pl-12">
+<div class="absolute left-4 top-1 w-5 h-5 rounded-full bg-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[12px] font-bold">check</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface-variant line-through">Departed Office</h4>
+<p class="text-sm text-on-surface-variant/70">12:32 PM • Safe Exit Confirmed</p>
+</div>
+</div>
+<!-- Step 2: Current -->
+<div class="relative pl-12">
+<div class="absolute left-3 -top-1 w-7 h-7 rounded-full bg-primary ring-4 ring-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[16px]">navigation</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm ring-1 ring-primary/10">
+<h4 class="font-bold text-primary">Main Street crossing</h4>
+<p class="text-sm text-on-surface mt-1">High visibility intersection. Traffic cameras active.</p>
+<div class="flex gap-2 mt-3">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-tighter">Safe Zone</span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-tighter">Camera Active</span>
+</div>
+</div>
+</div>
+<!-- Step 3: Upcoming -->
+<div class="relative pl-12 opacity-60">
+<div class="absolute left-4 top-1 w-5 h-5 rounded-full bg-surface-container-high border-2 border-surface-dim"></div>
+<div>
+<h4 class="font-bold">Enter Metro Station</h4>
+<p class="text-sm">In 450m • High crowd density predicted</p>
+</div>
+</div>
+<!-- Step 4: Final -->
+<div class="relative pl-12 opacity-60">
+<div class="absolute left-4 top-1 w-5 h-5 rounded-full bg-surface-container-high border-2 border-surface-dim"></div>
+<div>
+<h4 class="font-bold">Arrival: Union Station</h4>
+<p class="text-sm">Platform 4 • SafeRoom access nearby</p>
+</div>
+</div>
+</div>
+<div class="mt-12 bg-primary-container p-6 rounded-xl text-white">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-white/30">
+<img alt="Emergency Contact" class="w-full h-full object-cover" data-alt="Modern close-up portrait of a professional woman with a calm expression in warm indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuxts31uovrNU5Ng_D-yaXmVi_jkPj4X0-1x8J7Z-v6otSJSz9QWI7z6H0TnNvzkGHBjd9Ucl78DVUoXcROBIOrUxM_KEc9zroS5v8pXie9IKsA_BVJ8qxSmKTc2yxKNuKxY7mRRt3e9vicy_Si4vGTz-9VRgZ01kcxpjTGSZ_B14m68sO6Aza_8KS6js0oqu7MdiP2mCPTCTfU6mG088-MX2bJ4D--OV33IyM13SU_7m9gzJXhMN06_ST1zylER3BztWn9ZJCmKQ"/>
+</div>
+<div>
+<p class="text-xs font-bold uppercase text-white/70">Connected Contact</p>
+<p class="font-bold">Sarah Jenkins</p>
+</div>
+</div>
+<button class="w-full bg-white/10 hover:bg-white/20 py-2.5 rounded-lg text-sm font-bold transition-colors">
+                            Quick Call
+                        </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>
